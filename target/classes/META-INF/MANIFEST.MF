@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Built-By: Oscar
+Build-Jdk: 17.0.8.1
+Implementation-Title: campus-market
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.fypmumarket
+Implementation-URL: http://www.example.com
+Created-By: Maven Integration for Eclipse
+
