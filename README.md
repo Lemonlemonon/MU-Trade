@@ -1,2 +1,2 @@
-# Mu-Market
+# MU-Market
 A second-hand market for Maynooth University students.
