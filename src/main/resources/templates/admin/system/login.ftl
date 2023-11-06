@@ -49,7 +49,7 @@
   <div class="lyear-login">
     <div class="login-center">
       <div class="login-header text-center">
-        <a href=""> <img alt="light year admin" src="/admin/images/logo-sidebar.png"></a>
+        <a href=""> <img alt="MU-Market admin" src="/admin/images/logo-sidebar.png"></a>
       </div>
       <form id="login-form" method="post">
         <div class="form-group has-feedback feedback-left">

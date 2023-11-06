@@ -6,7 +6,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 /**
- * 项目入口启动文件
+ * Project entry startup file
  *
  */
 @SpringBootApplication
