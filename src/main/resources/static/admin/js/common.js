@@ -70,14 +70,14 @@ function upload(showPictureImg,input){
 	var formData = new FormData();
 	formData.append('photo',document.getElementById('select-file').files[0]);
 	$.ajax({
-		url:'/upload/upload_photo',
+		url:'/admin/upload/upload_photo',
 		contentType:false,
 		processData:false,
 		data:formData,
 		type:'POST',
 		success:function(data){
 				if(data.code == 0){
-					showSuccessMsg('图片上传成功!',function(){
+					showSuccessMsg('Image uploaded!',function(){
 						$("#"+showPictureImg).attr('src','/photo/view?filename=' + data.data);
 						$("#"+input).val(data.data);
 					})
