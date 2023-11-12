@@ -50,7 +50,7 @@ public class PathUtil {
         if (!backup.exists()) {
             backup.mkdirs();
         }
-        String backUpDir = backup.getAbsolutePath();
+        String backUpDir = backup.getAbsolutePath()+"/";
         return backUpDir;
     }
 
