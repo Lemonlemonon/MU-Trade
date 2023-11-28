@@ -69,6 +69,9 @@ public class CodeMsg {
 	public static CodeMsg ADMIN_USER_ROLE_UNABLE = new CodeMsg(-3003, "The status of the role belonging to this user is unavailable, please contact the administrator!");
 	public static CodeMsg ADMIN_USER_ROLE_AUTHORITES_EMPTY = new CodeMsg(-3004, "The role belonging to this user has no available permissions, please contact the administrator!");
 	
+	//Site setting error code
+	public static CodeMsg ADMIN_SITESETTING_EDIT_ERROR = new CodeMsg(-9400, "Fail to update site setting!");
+		
 	//Menu management error code
 	public static CodeMsg ADMIN_MENU_ADD_ERROR = new CodeMsg(-4000, "Failed to add the menu, please contact the administrator!");
 	public static CodeMsg ADMIN_MENU_EDIT_ERROR = new CodeMsg(-4001, "Failed to edit the menu, please contact the administrator!");
