@@ -114,4 +114,7 @@ public class CodeMsg {
 	public static CodeMsg ADMIN_STUDENT_EDIT_ERROR = new CodeMsg(-9103, "Student editing error, please contact the administrator!");
 	public static CodeMsg ADMIN_STUDENT_DELETE_ERROR = new CodeMsg(-9104, "There are associated data (items, wanted items, comments, reports, etc.) under this student. Please delete the associated data first before proceeding!");
 	
+	//News management error code
+	public static CodeMsg ADMIN_NEWS_ADD_ERROR = new CodeMsg(-9200, "Failed to add the News!");
+	public static CodeMsg ADMIN_NEWS_EDIT_ERROR = new CodeMsg(-9201, "Failed to edit the News!");
 }
