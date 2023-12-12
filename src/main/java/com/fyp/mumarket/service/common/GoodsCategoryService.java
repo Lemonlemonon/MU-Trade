@@ -22,38 +22,23 @@ public class GoodsCategoryService {
 
 	@Autowired
 	private GoodsCategoryDao goodsCategoryDao;
-	
-	/**
-	 * Item category addition/editing, when the ID is not empty, then it is an edit
-	 * @param goodsCategory
-	 * @return
-	 */
+
+	//Item category addition/editing, when the ID is not empty, then it is an edit
 	public GoodsCategory save(GoodsCategory goodsCategory){
 		return goodsCategoryDao.save(goodsCategory);
 	}
 	
-	/**
-	 * Retrieve all parent categories
-	 * @return
-	 */
+	//Retrieve all parent categories
 	public List<GoodsCategory> findTopCategorys(){
 		return goodsCategoryDao.findByParentIsNull();
 	}
 	
-	/**
-	 * Retrieve all child categories
-	 * @return
-	 */
+	//Retrieve all child categories
 	public List<GoodsCategory> findSecondCategorys(){
 		return goodsCategoryDao.findByParentIsNotNull();
 	}
 	
-	/**
-	 * Search category list
-	 * @param pageBean
-	 * @param goodsCategory
-	 * @return
-	 */
+	//Search category list
 	public PageBean<GoodsCategory> findlist(PageBean<GoodsCategory> pageBean,GoodsCategory goodsCategory){
 		ExampleMatcher exampleMatcher = ExampleMatcher.matching();
 		exampleMatcher = exampleMatcher.withMatcher("name", GenericPropertyMatchers.contains());
@@ -68,45 +53,27 @@ public class GoodsCategoryService {
 		return pageBean;
 	}
 	
-	/**
-	 * Find by id
-	 * @param id
-	 * @return
-	 */
+	//Find by id
 	public GoodsCategory findById(Long id){
 		return goodsCategoryDao.find(id);
 	}
 	
-	/**
-	 * Delete category by id
-	 * @param id
-	 */
+	//Delete category by id
 	public void delete(Long id){
 		goodsCategoryDao.deleteById(id);
 	}
 	
-	/**
-	 * Retrieve all category
-	 * @return
-	 */
+	//Retrieve all category
 	public List<GoodsCategory> findAll(){
 		return goodsCategoryDao.findAll();
 	}
 	
-	/**
-	 * Retrieve all sub-categories under a top-level category
-	 * @param parent
-	 * @return
-	 */
+	//Retrieve all sub-categories under a top-level category
 	public List<GoodsCategory> findChildren(GoodsCategory parent){
 		return goodsCategoryDao.findByParent(parent);
 	}
 	
-	/**
-	 * Search by category name
-	 * @param name
-	 * @return
-	 */
+	//Search by category name
 	public List<GoodsCategory> findByName(String name){
 		return goodsCategoryDao.findByName(name);
 	}
