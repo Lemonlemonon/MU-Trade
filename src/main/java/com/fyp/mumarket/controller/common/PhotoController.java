@@ -19,27 +19,4 @@ import com.fyp.mumarket.util.PathUtil;
 @Controller
 public class PhotoController {
 
-    @Autowired
-    private ResourceLoader resourceLoader;
-
-    // @Value("${fyp.upload.photo.path}")
-    // private String uploadPhotoPath;//文件保存位置
-
-    /**
-     * 系统统一的图片查看方法
-     *
-     * @param filename
-     * @return
-     */
-    @RequestMapping(value = "/view")
-    @ResponseBody
-    public ResponseEntity<?> viewPhoto(@RequestParam(name = "filename", required = true) String filename) {
-        String uploadPhotoPath = PathUtil.newInstance().getUploadPhotoPath();
-        Resource resource = resourceLoader.getResource("file:" + uploadPhotoPath + "/" + filename);
-        try {
-            return ResponseEntity.ok(resource);
-        } catch (Exception e) {
-            return ResponseEntity.notFound().build();
-        }
-    }
 }

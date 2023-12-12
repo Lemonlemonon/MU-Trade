@@ -117,4 +117,8 @@ public class CodeMsg {
 	//News management error code
 	public static CodeMsg ADMIN_NEWS_ADD_ERROR = new CodeMsg(-9200, "Failed to add the News!");
 	public static CodeMsg ADMIN_NEWS_EDIT_ERROR = new CodeMsg(-9201, "Failed to edit the News!");
+	
+	//Related site management error code
+	public static CodeMsg ADMIN_FRIENDLINK_ADD_ERROR = new CodeMsg(-9300, "Failed to add site!");
+	public static CodeMsg ADMIN_FRIENDLINK_EDIT_ERROR = new CodeMsg(-9301, "Failed to edit site!");
 }
