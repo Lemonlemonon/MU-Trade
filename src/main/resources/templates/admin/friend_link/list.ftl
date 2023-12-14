@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-<title>${siteName!""}|Data backup management-${title!""}</title>
+<title>${siteName!""}|Related site management-${title!""}</title>
 <#include "../common/header.ftl"/>
 <style>
 td{
@@ -40,7 +40,22 @@ td{
           <div class="col-lg-12">
             <div class="card">
               <div class="card-toolbar clearfix">
-                
+                <form class="pull-right search-bar" method="get" action="list" role="form">
+                  <div class="input-group">
+                    <div class="input-group-btn">
+                      <button class="btn btn-default dropdown-toggle" id="search-btn" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
+                     Name<span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li> <a tabindex="-1" href="javascript:void(0)" data-field="title">Name</a> </li>
+                      </ul>
+                    </div>
+                    <input type="text" class="form-control" value="${name!""}" name="name" placeholder="Please enter the name">
+                  	<span class="input-group-btn">
+                      <button class="btn btn-primary" type="submit">Search</button>
+                    </span>
+                  </div>
+                </form>
                 <#include "../common/third-menu.ftl"/>
               </div>
               <div class="card-body">
@@ -54,49 +69,53 @@ td{
                             <input type="checkbox" id="check-all"><span></span>
                           </label>
                         </th>
-                        <th>Backup file</th>
-                        <th>Save directory</th>
-                        <th>Operation time</th>
+                        <th>Name</th>
+                        <th>URL</th>
+                        <th>Sort</th>
+                        <th>Created time</th>
                       </tr>
                     </thead>
                     <tbody>
                       <#if pageBean.content?size gt 0>
-                      <#list pageBean.content as databaseBak>
+                      <#list pageBean.content as friendLink>
                       <tr>
                         <td style="vertical-align:middle;">
                           <label class="lyear-checkbox checkbox-primary">
-                            <input type="checkbox" name="ids[]" value="${databaseBak.id}"><span></span>
+                            <input type="checkbox" name="ids[]" value="${friendLink.id}"><span></span>
                           </label>
                         </td>
-                        <td style="vertical-align:middle;">${databaseBak.filename}</td>
-                        <td align="center">${databaseBak.filepath}</td>
-                        <td style="vertical-align:middle;"><font class="text-success">${databaseBak.createTime}</font></td>
+                        <td style="vertical-align:middle;">${friendLink.name}</td>
+                        <td style="vertical-align:middle;">
+                        	${friendLink.url}
+                        </td>
+                        <td style="vertical-align:middle;" align="center">${friendLink.sort}</td>
+                        <td style="vertical-align:middle;" style="vertical-align:middle;"><font class="text-success">${friendLink.createTime}</font></td>
                       </tr>
                     </#list>
                     <#else>
-                    <tr align="center"><td colspan="4">Here is empty!</td></tr>
-					</#if>                      
+                    <tr align="center"><td colspan="5">Here is empty!</td></tr>
+					</#if>
                     </tbody>
                   </table>
                 </div>
                 <#if pageBean.total gt 0>
-                <ul class="pagination">
+                <ul class="pagination ">
                   <#if pageBean.currentPage == 1>
                   <li class="disabled"><span>«</span></li>
                   <#else>
-                  <li><a href="list?currentPage=1">«</a></li>
+                  <li><a href="list?name=${name!""}&currentPage=1">«</a></li>
                   </#if>
                   <#list pageBean.currentShowPage as showPage>
                   <#if pageBean.currentPage == showPage>
                   <li class="active"><span>${showPage}</span></li>
                   <#else>
-                  <li><a href="list?currentPage=${showPage}">${showPage}</a></li>
+                  <li><a href="list?name=${name!""}&currentPage=${showPage}">${showPage}</a></li>
                   </#if>
                   </#list>
                   <#if pageBean.currentPage == pageBean.totalPage>
                   <li class="disabled"><span>»</span></li>
                   <#else>
-                  <li><a href="list?currentPage=${pageBean.totalPage}">»</a></li>
+                  <li><a href="list?name=${name!""}&currentPage=${pageBean.totalPage}">»</a></li>
                   </#if>
                   <li><span>In total ${pageBean.totalPage} pages,${pageBean.total} items</span></li>
                 </ul>
@@ -153,36 +172,15 @@ function del(url){
         }
     });
 }
-//Backup operation
-function add(url){
-	ajaxRequest(url,'post',{},function(rst){
-			if(rst.code == 0){
-				showSuccessMsg('Backup successfully!',function(){
-					window.location.reload();
-				});
-			}
-			
-	});
-	
-}
-//Resore opperation
-function restore(url){
+//open edit page
+function edit(url){
 	if($("input[type='checkbox']:checked").length != 1){
-		showWarningMsg('Select at least one data to restore!');
+		showWarningMsg('Please select a data to edit!');
 		return;
 	}
-	var id = $("input[type='checkbox']:checked").val();
-	ajaxRequest(url,'post',{id:id},function(rst){
-			if(rst.code == 0){
-				showSuccessMsg('Restore successfully',function(){
-					window.location.reload();
-				});
-			}
-			
-	});
-	
+	window.location.href = url + '?id=' + $("input[type='checkbox']:checked").val();
 }
-//Invoke the delete method
+//call delete method
 function deleteReq(ids,url){
 	$.ajax({
 		url:url,
@@ -191,16 +189,16 @@ function deleteReq(ids,url){
 		dataType:'json',
 		success:function(data){
 			if(data.code == 0){
-				showSuccessMsg('Backup successfully deleted!',function(){
-					window.location.reload();
+				showSuccessMsg('Site deleted',function(){
 					//$("input[type='checkbox']:checked").parents("tr").remove();
+					window.location.reload();
 				})
 			}else{
 				showErrorMsg(data.msg);
 			}
 		},
 		error:function(data){
-			alert('Unknown network error!');
+			alert('Network error!');
 		}
 	});
 }

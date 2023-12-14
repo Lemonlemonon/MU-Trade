@@ -1,13 +1,10 @@
 package com.fyp.mumarket.listener;
 import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSessionEvent;
-/**
- * session监听类，用于监听session的创建，销毁
- */
 import javax.servlet.http.HttpSessionListener;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+//Session listener class,monitor on session created or destroyed
 @WebListener
 public class SessionListener implements HttpSessionListener {
 	

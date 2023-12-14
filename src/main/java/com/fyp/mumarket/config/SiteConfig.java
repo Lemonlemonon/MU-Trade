@@ -1,14 +1,8 @@
 package com.fyp.mumarket.config;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
-
-/**
- * Website configuration class.
- * @author Administrator
- *
- */
+//Web configuration class.
 @Component
 @PropertySource(value="classpath:site.properties")
 public class SiteConfig {
