@@ -88,7 +88,7 @@ public class MenuController {
 			Result.error(CodeMsg.ADMIN_MENU_ADD_ERROR);
 		}
 		//Database addition operation succeeded, log the action
-		operaterLogService.add("added menu information【" + menu + "】");
+		operaterLogService.add("added menu information[" + menu + "]");
 		return Result.success(true);
 	}
 	
@@ -149,7 +149,7 @@ public class MenuController {
 			Result.error(CodeMsg.ADMIN_MENU_ADD_ERROR);
 		}
 		//Database addition operation succeeded, log the action
-		operaterLogService.add("edited menu information【" + existMenu + "】");
+		operaterLogService.add("edited menu information [" + existMenu + "]");
 		return Result.success(true);
 	}
 	
@@ -168,7 +168,7 @@ public class MenuController {
 			return Result.error(CodeMsg.ADMIN_MENU_DELETE_ERROR);
 		}
 		//Database addition operation succeeded, record the log
-		operaterLogService.add("removed menu information，Menu ID【" + id + "】");
+		operaterLogService.add("removed menu information，Menu ID [" + id + "]");
 		return Result.success(true);
 	}
 }

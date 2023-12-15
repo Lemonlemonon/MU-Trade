@@ -122,7 +122,7 @@ public class SystemController {
 		//Destroy the verification code in the session
 		request.getSession().setAttribute("admin_login", null);
 		//Write the login record to the log database
-		operaterLogService.add("User【"+user.getUsername()+"】 at 【" + StringUtil.getFormatterDate(new Date(), "yyyy-MM-dd HH:mm:ss") + "】 Logined in to the system！");
+		operaterLogService.add("User ["+user.getUsername()+"] at  [" + StringUtil.getFormatterDate(new Date(), "yyyy-MM-dd HH:mm:ss") + "] Logined in to the system！");
 		log.info("User login successful，user = " + findByUsername);
 		return Result.success(true);
 	}

@@ -90,8 +90,8 @@ public class RoleController {
 		if(roleService.save(role) == null){
 			return Result.error(CodeMsg.ADMIN_ROLE_ADD_ERROR);
 		}
-		log.info("Created role【"+role+"】");
-		operaterLogService.add("Created role【"+role.getName()+"】");
+		log.info("Created role ["+role+"]");
+		operaterLogService.add("Created role ["+role.getName()+"]");
 		return Result.success(true);
 	}
 	
@@ -138,8 +138,8 @@ public class RoleController {
 		if(roleService.save(existRole) == null){
 			return Result.error(CodeMsg.ADMIN_ROLE_EDIT_ERROR);
 		}
-		log.info("Edit role【"+role+"】");
-		operaterLogService.add("Edit role【"+role.getName()+"】");
+		log.info("Edit role ["+role+"]");
+		operaterLogService.add("Edit role ["+role.getName()+"]");
 		return Result.success(true);
 	}
 	
@@ -158,8 +158,8 @@ public class RoleController {
 			// TODO: handle exception
 			return Result.error(CodeMsg.ADMIN_ROLE_DELETE_ERROR);
 		}
-		log.info("Edited role ID【"+id+"】");
-		operaterLogService.add("Removed role ID【"+id+"】");
+		log.info("Edited role ID ["+id+"]");
+		operaterLogService.add("Removed role ID ["+id+"]");
 		return Result.success(true);
 	}
 }
