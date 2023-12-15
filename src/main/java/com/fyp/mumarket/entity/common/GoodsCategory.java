@@ -1,17 +1,13 @@
 package com.fyp.mumarket.entity.common;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
 import com.fyp.mumarket.annotion.ValidateEntity;
 import com.fyp.mumarket.entity.common.BaseEntity;
-
 /**
  * Item category entity
  * @author Administrator
@@ -40,7 +36,7 @@ public class GoodsCategory extends BaseEntity{
 	private String icon;//icon
 	
 	@Column(name="sort",nullable=false,length=4)
-	private Integer sort = 0;//分类顺序，默认升序排列,默认是0
+	private Integer sort = 0;//Sort value 0=ascending order
 
 	public String getName() {
 		return name;
