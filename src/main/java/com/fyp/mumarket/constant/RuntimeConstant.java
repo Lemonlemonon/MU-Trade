@@ -19,7 +19,8 @@ public class RuntimeConstant {
 			"/admin/images/**",
 			"/error",
 			"/photo/view",
-			"/cpacha/generate_cpacha"
+			"/cpacha/generate_cpacha",
+			"/home/**"
 		);
 	//URLs that the permission interceptor does not need to intercept.
 	public static List<String> authorityExcludePathPatterns = Arrays.asList(
@@ -35,7 +36,8 @@ public class RuntimeConstant {
 			"/system/logout",
 			"/system/update_userinfo",
 			"/system/update_pwd",
-			"/photo/view"
+			"/photo/view",
+			"/home/**"
 		);
 	//URLs that the frontend global interceptor does not need to intercept
 	public static List<String> homeGlobalExcludePathPatterns = Arrays.asList(
@@ -51,6 +53,12 @@ public class RuntimeConstant {
 			"/admin/**",
 			"/error",
 			"/cpacha/generate_cpacha",
-			"/photo/view"
+			"/photo/view",
+			"/home/index/**",
+			"/home/goods/**",
+			"/home/wanted_goods/**",
+			"/home/js/**",
+			"/home/css/**",
+			"/home/imgs/**"
 		);
 }
