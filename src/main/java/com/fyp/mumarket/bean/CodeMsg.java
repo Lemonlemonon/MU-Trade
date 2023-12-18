@@ -121,4 +121,11 @@ public class CodeMsg {
 	//Related site management error code
 	public static CodeMsg ADMIN_FRIENDLINK_ADD_ERROR = new CodeMsg(-9300, "Failed to add site!");
 	public static CodeMsg ADMIN_FRIENDLINK_EDIT_ERROR = new CodeMsg(-9301, "Failed to edit site!");
+	
+	//Home page login error code
+	public static CodeMsg HOME_STUDENT_REGISTER_SN_EXIST = new CodeMsg(-10000, "This student id already registered!");
+	public static CodeMsg HOME_STUDENT_REGISTER_ERROR = new CodeMsg(-10001, "Fail to regist!");
+	public static CodeMsg HOME_STUDENT_SN_NO_EXIST = new CodeMsg(-10002, "Invaild Student ID!");
+	public static CodeMsg HOME_STUDENT_PASSWORD_ERROR = new CodeMsg(-10003, "Wrong password!");
+	public static CodeMsg HOME_STUDENT_UNABLE = new CodeMsg(-10003, "User account has been frozen!");
 }
