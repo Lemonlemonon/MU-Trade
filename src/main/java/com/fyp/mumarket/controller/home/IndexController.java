@@ -98,4 +98,61 @@ public class IndexController {
 		Student student = studentService.findBySn(sn);
 		return Result.success(student == null);
 	}
+	
+	/**
+	 * Sign up form submit
+	 * @param student
+	 * @return
+	 */
+	@RequestMapping(value="/register",method=RequestMethod.POST)
+	@ResponseBody
+	public Result<Boolean> register(Student student){
+		CodeMsg validate = ValidateEntityUtil.validate(student);
+		if(validate.getCode() != CodeMsg.SUCCESS.getCode()){
+			return Result.error(validate);
+		}
+		//Pass verification
+		if(studentService.findBySn(student.getSn()) != null){
+			return Result.error(CodeMsg.HOME_STUDENT_REGISTER_SN_EXIST);
+		}
+		student = studentService.save(student);
+		if(student == null){
+			return Result.error(CodeMsg.HOME_STUDENT_REGISTER_ERROR);
+		}
+		//Indicating sign up success, posting user information into session
+		SessionUtil.set(SessionConstant.SESSION_STUDENT_LOGIN_KEY, student);
+		return Result.success(true);
+	}
+	
+	/**
+	 * Login form submit
+	 * @param sn
+	 * @param password
+	 * @return
+	 */
+	@RequestMapping(value="/login",method=RequestMethod.POST)
+	@ResponseBody
+	public Result<Boolean> login(@RequestParam(name="sn",required=true)String sn,
+			@RequestParam(name="password",required=true)String password){
+		Student student = studentService.findBySn(sn);
+		if(student == null){
+			return Result.error(CodeMsg.HOME_STUDENT_REGISTER_SN_EXIST);
+		}
+		student = studentService.save(student);
+		if(student == null){
+			return Result.error(CodeMsg.HOME_STUDENT_SN_NO_EXIST);
+		}
+		//Student number exist, now verify password
+		if(!student.getPassword().equals(password)){
+			return Result.error(CodeMsg.HOME_STUDENT_PASSWORD_ERROR);
+		}
+		//Check if the account is banned
+		if(student.getStatus() != Student.STUDENT_STATUS_ENABLE){
+			return Result.error(CodeMsg.HOME_STUDENT_UNABLE);
+		}
+		//Indicating sign up success, posting user information into session
+		SessionUtil.set(SessionConstant.SESSION_STUDENT_LOGIN_KEY, student);
+		return Result.success(true);
+	}
+
 }
