@@ -1,6 +1,5 @@
 package com.fyp.mumarket.service.common;
 import java.util.List;
-
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaBuilder.In;
 import javax.persistence.criteria.CriteriaQuery;
@@ -14,98 +13,89 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import com.fyp.mumarket.bean.PageBean;
-import com.fyp.mumarket.dao.common.CommentDao;
-import com.fyp.mumarket.entity.common.Comment;
+import com.fyp.mumarket.dao.common.ReportGoodsDao;
 import com.fyp.mumarket.entity.common.Goods;
+import com.fyp.mumarket.entity.common.ReportGoods;
 import com.fyp.mumarket.entity.common.Student;
 
 @Service
-public class CommentService {
+public class ReportGoodsService {
 
 	@Autowired
-	private CommentDao commentDao;
+	private ReportGoodsDao reportGoodsDao;
 	
 	/**
-	 * Save comment
+	 * Add/edit a report; when id is not null, proceed edit
 	 * @param goods
 	 * @return
 	 */
-	public Comment save(Comment comment){
-		return commentDao.save(comment);
+	public ReportGoods save(ReportGoods reportGoods){
+		return reportGoodsDao.save(reportGoods);
 	}
 	
 	
 	
 	
 	/**
-	 * Delete comment by id
+	 * Delete a report
 	 * @param id
 	 */
 	public void delete(Long id){
-		commentDao.deleteById(id);
+		reportGoodsDao.deleteById(id);
 	}
 	
 	
 	
 	/**
-	 * search comment by student id
+	 * Find by student object
 	 * @param student
 	 * @return
 	 */
-	public List<Comment> findByStudent(Student student){
-		return commentDao.findByStudent(student);
+	public List<ReportGoods> findByStudent(Student student){
+		return reportGoodsDao.findByStudent(student);
 	}
 	
 	/**
-	 * Search comment by item
-	 * @param goods
-	 * @return
-	 */
-	public List<Comment> findByGoods(Goods goods){
-		return commentDao.findByGoods(goods);
-	}
-	
-	/**
-	 * Search by student id and item id
+	 * Find by student id and item id
 	 * @param id
 	 * @param studentId
 	 * @return
 	 */
-	public Comment find(Long goodsId,Long studentId){
-		return commentDao.find(goodsId, studentId);
+	public ReportGoods find(Long goodsId,Long studentId){
+		return reportGoodsDao.find(goodsId, studentId);
 	}
 	
 	/**
-	 * Search by id
+	 * Find by report id
 	 * @param id
 	 * @return
 	 */
-	public Comment find(Long id){
-		return commentDao.find(id);
+	public ReportGoods find(Long id){
+		return reportGoodsDao.find(id);
 	}
 	
 	/**
-	 * Search comment with filter
+	 * Report searching
 	 * @param pageBean
-	 * @param comment
+	 * @param reportGoods
 	 * @param goodsList
 	 * @return
 	 */
-	public PageBean<Comment> findlist(PageBean<Comment> pageBean,Comment comment,List<Goods> goodsList){
+	public PageBean<ReportGoods> findlist(PageBean<ReportGoods> pageBean,ReportGoods reportGoods,List<Goods> goodsList){
 		
-		Specification<Comment> specification = new Specification<Comment>() {
+		Specification<ReportGoods> specification = new Specification<ReportGoods>() {
 			/**
 			 * 
 			 */
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public Predicate toPredicate(Root<Comment> root,
+			public Predicate toPredicate(Root<ReportGoods> root,
 					CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) {
-				Predicate predicate = criteriaBuilder.like(root.get("content"), "%" + (comment.getContent() == null ? "" : comment.getContent()) + "%");
-				if(comment.getStudent() != null && comment.getStudent().getId() != null){
-					Predicate equal1 = criteriaBuilder.equal(root.get("student"), comment.getStudent().getId());
-					predicate = criteriaBuilder.and(predicate,equal1);
+				Predicate predicate = criteriaBuilder.like(root.get("content"), "%" + (reportGoods.getContent() == null ? "" : reportGoods.getContent()) + "%");
+				if(reportGoods.getStudent() != null && reportGoods.getStudent().getId() != null){
+					Predicate eqal1 = criteriaBuilder.equal(root.get("student"), reportGoods.getStudent().getId());
+					predicate = criteriaBuilder.and(predicate,eqal1);
 				}
 				if(goodsList != null && goodsList.size() >0 ){
 					In<Object> in = criteriaBuilder.in(root.get("goods"));
@@ -117,18 +107,10 @@ public class CommentService {
 		};
 		Sort sort = Sort.by(Direction.DESC, "createTime");
 		PageRequest pageable = PageRequest.of(pageBean.getCurrentPage()-1, pageBean.getPageSize(), sort);
-		Page<Comment> findAll = commentDao.findAll(specification, pageable);
+		Page<ReportGoods> findAll = reportGoodsDao.findAll(specification, pageable);
 		pageBean.setContent(findAll.getContent());
 		pageBean.setTotal(findAll.getTotalElements());
 		pageBean.setTotalPage(findAll.getTotalPages());
 		return pageBean;
-	}
-	
-	/**
-	 * Retrieve total comment count
-	 * @return
-	 */
-	public long total(){
-		return commentDao.count();
 	}
 }
