@@ -128,4 +128,9 @@ public class CodeMsg {
 	public static CodeMsg HOME_STUDENT_SN_NO_EXIST = new CodeMsg(-10002, "Invaild Student ID!");
 	public static CodeMsg HOME_STUDENT_PASSWORD_ERROR = new CodeMsg(-10003, "Wrong password!");
 	public static CodeMsg HOME_STUDENT_UNABLE = new CodeMsg(-10003, "User account has been frozen!");
+	
+	//User report error code
+	public static CodeMsg HOME_STUDENT_REPORT_GOODS_ERROR = new CodeMsg(-40000, "Failed to report");
+	public static CodeMsg HOME_STUDENT_REPORTED_GOODS = new CodeMsg(-40001, "You've already reported this item!");
+	public static CodeMsg HOME_STUDENT_REPORTED_NO_EXIST = new CodeMsg(-40002, "Report not exist!");
 }
