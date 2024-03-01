@@ -33,7 +33,7 @@ input::-ms-clear {
 }
 .login {
 	margin:0 auto;
-	width:370px;
+	width:568px;
 	border:2px solid #eee;
 	border-bottom:none;
 	position:relative;
@@ -52,7 +52,7 @@ input::-ms-clear {
 	font-size:16px;
 }
 .header .switch #switch_qlogin {
-	margin-right:85px;
+	margin-right:95px;
 }
 .header .switch .switch_btn {
 	color:#999;
@@ -84,22 +84,22 @@ input::-ms-clear {
 }
 
 .web_login {
-	width:370px;
+	width:568px;
 	position:relative;
 }
 #web_login{_left:60px;*left:0;}
 .web_login .login_form {
-	width:272px;
+	width:302px;
 	margin:0 auto;
 }
 .web_login .reg_form {
-	width:300px;
+	width: 400px;
 	margin:0 auto;
 }
 .web_login .input-tips {
 	float:left;
 	margin-top:10px;
-	width:50px;
+	width:95px;
 	height:42px;
 	font-size:16px;
 	line-height:42px;
@@ -109,7 +109,7 @@ input::-ms-clear {
 	float:left;
 	text-align:right;
 	padding-right:10px;
-	width:75px;
+	width:146px;
 	height:30px;
 	font-size:16px;
 	margin-top:10px;
@@ -183,7 +183,7 @@ input::-ms-clear {
 	background-color:#ffffff;
 }
 
-h1{margin:80px auto 50px auto;text-align:center;color:#4BC0A5;margin-left:-25px;font-size:45px;font-weight: bold;text-shadow: 0px 1px 1px #555;}
+h1{margin:80px auto 50px auto;text-align:center;color:#00788b;margin-left:-25px;font-size:45px;font-weight: bold;text-shadow: 0px 1px 1px #555;}
 h1 sup{
     font-size: 18px;
     font-style: normal;
@@ -210,19 +210,19 @@ border: 1px solid #5796f;
 box-shadow: 0 0 0;
 }
 .web_login .reg_form {
-width: 300px;
+width: 400	px;
 margin: 0 auto;
 }
 .web_login .inputstyle2 {border-radius:2px;width:210px;}
 .web_login .input-tips2 {
 padding-right: 5px;
-width: 80px;_width: 75px;_font-size:12px;}
+width: 146px;_width: 75px;_font-size:12px;}
 .button_blue
 {
 	display:inline-block;
 	float:left;
 	height:41px;border-radius:4px;
-	background:rgb(100,203,179);border:none;cursor:pointer;
+	background:rgb(0,120,139);border:none;cursor:pointer;
 	*border-bottom:none;
 	color:#fff;
 	font-size:16px;padding:0 10px;*width:140px;

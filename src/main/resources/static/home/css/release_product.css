@@ -24,17 +24,17 @@ header { width: 100%; min-width: 960px; height: 120px; position: fixed; left: 0p
 .slogan { display: block; position: absolute; left: 0px; width: 179px; height: 61px; text-decoration: none; }
 .s-main, .s-submain { text-indent: -9999em; }
 .slogan img { position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; }
-.s-main { font-size: 3em; font-weight: 400; color: rgb(75, 191, 165); }
+.s-main { font-size: 3em; font-weight: 400; color: rgb(0, 120, 139); }
 .s-submain { font-size: 1.33em; color: rgb(255, 178, 0); text-align: center; }
 .search-box-wr { width: 50%; margin: 0px auto; padding-top: 5px; }
-.search-box { width: 100%; height: 50px; border: 1px solid rgb(68, 193, 165); border-radius: 25px; font-size: 1.33em; color: rgb(75, 192, 165); overflow: hidden; }
-.search-submit { float: right; width: 24.13%; height: 100%; background-color: rgb(100, 203, 179); font-size: 16px; color: rgb(255, 255, 255); cursor: pointer; }
+.search-box { width: 100%; height: 50px; border: 1px solid rgb(0, 120, 139); border-radius: 25px; font-size: 1.33em; color: rgb(0, 120, 139); overflow: hidden; }
+.search-submit { float: right; width: 24.13%; height: 100%; background-color: rgb(0, 120, 139); font-size: 16px; color: rgb(255, 255, 255); cursor: pointer; }
 .search-submit:hover { background: rgb(62, 177, 150) none repeat scroll 0% 0%; }
 .input-wr { margin-right: 24.13%; }
 .search-icon { height: 24px; margin: 13px 0px 0px 18px; float: left; }
 .search-input { height: 30px; margin-left: 45px; padding: 10px; }
-.search-input input { width: 100%; height: 100%; font-size: 16px; color: rgb(75, 191, 165); line-height: 2em; vertical-align: middle; outline: medium none; }
-.search-hots { font-size: 12px; width: 97%; margin-top: 12px; color: rgb(75, 191, 165); overflow: hidden; opacity: 1; }
+.search-input input { width: 100%; height: 100%; font-size: 16px; color: rgb(0, 120, 139); line-height: 2em; vertical-align: middle; outline: medium none; }
+.search-hots { font-size: 12px; width: 97%; margin-top: 12px; color: rgb(0, 120, 139); overflow: hidden; opacity: 1; }
 .hots { margin: 0px 8px; color: rgb(133, 142, 143); text-decoration: none; }
 .hots:hover { color: rgb(237, 78, 81); }
 .log-reg { position: absolute; right: 0px; top: 40px; }
@@ -57,10 +57,10 @@ nav a { display: block; height: 100%; color: inherit; font-size: inherit; text-d
 .area i { display: inline-block; margin-top: 15px; width: 24px; height: 34px; background-image: url('../imgs/location.png'); }
 #college { display: table; height: 42px; width: 100%; text-align: center; line-height: 1.1em; border: 0px none; color: rgb(255, 178, 0); font-size: 14px; font-weight: bold; }
 #college span { display: table-cell; vertical-align: middle; }
-.switch { display: inline-block; margin-bottom: 10px; border-bottom: 1px solid rgb(68, 193, 165); font-size: 12px; line-height: 15px; color: rgb(68, 193, 165); text-align: center; height: 16px; }
+.switch { display: inline-block; margin-bottom: 10px; border-bottom: 1px solid rgb(0, 120, 139); font-size: 12px; line-height: 15px; color: rgb(0, 120, 139); text-align: center; height: 16px; }
 li.catg a { color: rgb(102, 102, 102); height: 60px; line-height: 60px; position: relative; transition: box-shadow 0.2s linear 0s; }
 li.catg:hover .sub-nav { display: table; }
-li.catg .sub-nav { display: none; width: 208px; height: 60px; position: absolute; right: -240px; top: 0px; background-color: rgb(40, 189, 160); padding: 0px 16px; z-index: 99; }
+li.catg .sub-nav { display: none; width: 208px; height: 60px; position: absolute; right: -240px; top: 0px; background-color: rgb(0, 120, 139); padding: 0px 16px; z-index: 99; }
 li.catg .sub-nav span { vertical-align: middle; display: table-cell; }
 li.catg .sub-nav a { text-decoration: none; height: auto; display: inline-block; color: rgb(255, 255, 255); line-height: 1.8; margin-right: 10px; }
 li.catg .sub-nav a:hover { color: rgb(255, 198, 0); }
@@ -69,7 +69,7 @@ li.catg .sub-nav a:hover { color: rgb(255, 198, 0); }
 .nav-icons img { vertical-align: middle; }
 .catg h3 { float: right; width: 60px; height: 100%; margin-right: 9px; text-align: left; overflow: hidden; font-size: 14px; }
 .area .switch:hover { color: rgb(237, 78, 81); border-bottom-color: rgb(237, 78, 81); }
-li.catg:hover a, li.area:hover > div { box-shadow: 0px 0px 7px rgba(23, 190, 160, 0.3) inset; }
+li.catg:hover a, li.area:hover > div { box-shadow: 0px 0px 7px rgba(0, 120, 139) inset; }
 aside { width: 140px; position: absolute; top: 170px; right: 20px; }
 .release-button { display: block; width: 100%; height: 52px; background-image: url('../imgs/release-button-2.png'); text-indent: -9999em; }
 .release-button:hover { background-image: url('../imgs/release-button-1.png'); }
@@ -109,11 +109,11 @@ p.site-name { width: 110px; height: 21px; margin: 17px auto 0px; background: tra
 #renren-button { float: left; }
 #qq-button { float: right; }
 .login-form-container, .reg-form-container { width: 100%; padding-top: 1px; padding-bottom: 30px; }
-.login-form-container { background-color: rgb(75, 192, 165); }
-.reg-form-container { background-color: rgb(68, 193, 165); }
-.login-form-container .input-class, .reg-form-container .input-class { display: block; margin: 20px auto 0px; width: 268px; height: 20px; padding: 10px 0px; color: rgb(75, 192, 165); font-size: 14px; line-height: 20px; text-align: center; background-color: rgb(255, 255, 255); border-radius: 20px; }
+.login-form-container { background-color: rgb(0, 120, 139); }
+.reg-form-container { background-color: rgb(0, 120, 139); }
+.login-form-container .input-class, .reg-form-container .input-class { display: block; margin: 20px auto 0px; width: 268px; height: 20px; padding: 10px 0px; color: rgb(0, 120, 139); font-size: 14px; line-height: 20px; text-align: center; background-color: rgb(255, 255, 255); border-radius: 20px; }
 .login-p { display: block; text-align: center; margin-top: 20px; color: rgb(255, 255, 255); }
-.login-input { width: 268px; height: 35px; color: rgb(75, 192, 165); font-size: 14px; text-align: center; background-color: rgb(255, 255, 255); border-radius: 20px; }
+.login-input { width: 268px; height: 35px; color: rgb(0, 120, 139); font-size: 14px; text-align: center; background-color: rgb(255, 255, 255); border-radius: 20px; }
 p.ex { width: 270px; margin: 20px auto 0px; }
 .rem-wr { float: left; line-height: 1em; }
 #rem { vertical-align: middle; }
@@ -127,13 +127,13 @@ a.forget:hover { color: rgb(255, 197, 0); }
 .login-form-container .reg:hover, .reg-form-container .log:hover { text-decoration: underline; }
 textarea { overflow: auto; }
 #have_login { height: 50px; }
-.avatar { float: left; border: 1px solid rgb(75, 192, 165); padding: 3px; width: 40px; height: 40px; border-radius: 100%; }
+.avatar { float: left; border: 1px solid rgb(0, 120, 139); padding: 3px; width: 40px; height: 40px; border-radius: 100%; }
 #person_info { height: 100%; cursor: pointer; position: relative; }
 .person_name { float: left; color: rgb(0, 172, 144); margin: 15px 0px 0px 15px; max-width: 75px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
 .grade { float: left; margin: 12px 0px 0px 10px; }
 .grade img { height: 20px; }
 .login_border { width: 170px; display: none; margin-top: 12px; position: absolute; bottom: -10px; }
-.login_slider { display: none; background: rgb(246, 249, 249) none repeat scroll 0% 0%; width: 158px; border-bottom: 1px solid rgb(68, 193, 165); text-align: center; height: 142px; margin-left: 6px; z-index: 500; position: absolute; top: 60px; }
+.login_slider { display: none; background: rgb(246, 249, 249) none repeat scroll 0% 0%; width: 158px; border-bottom: 1px solid rgb(0, 120, 139); text-align: center; height: 142px; margin-left: 6px; z-index: 500; position: absolute; top: 60px; }
 .login_slider h3 { color: rgb(28, 130, 108); line-height: 350%; }
 .login_slider ul li { line-height: 270%; list-style-type: none; width: 100px; text-align: left; margin-left: 50px; }
 .login_slider ul li a { color: rgb(102, 102, 102); text-decoration: none; }
@@ -159,7 +159,7 @@ div.init-up:hover .up-bg { transition: all 0.3s ease 0s; transform: rotate(-180d
 .photo-area { position: relative; }
 .up-bg { display: none; }
 .photo-caution { display: none; }
-.init-up .up-bg { display: block; width: 160px; height: 160px; position: absolute; left: 0px; top: 0px; border-radius: 50%; background-image: linear-gradient(rgb(68, 193, 165) 0%, rgb(255, 198, 0) 100%); cursor: pointer; }
+.init-up .up-bg { display: block; width: 160px; height: 160px; position: absolute; left: 0px; top: 0px; border-radius: 50%; background-image: linear-gradient(rgb(0, 120, 139) 0%, rgb(255, 198, 0) 100%); cursor: pointer; }
 .photo { position: relative; top: 24px; display: inline-block; background-color: white; width: 160px; height: 160px; margin-left: 30px; box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15); }
 .photo-caution { width: 100%; position: absolute; bottom: 0px; line-height: 35px; text-align: center; color: rgb(189, 191, 197); font-size: 14px; }
 .photo div { width: 140px; height: 140px; position: relative; left: 10px; top: 10px; }
@@ -212,7 +212,7 @@ span.yes { border-right: 1px solid rgb(186, 200, 202); }
 .download_guide .pop_wrapper .close, .school_guide .close-ico { position: absolute; left: 428px; top: 53px; width: 40px; height: 40px; background: transparent url('../imgs/app-guide-sprite.png') repeat scroll -10px -123px; cursor: pointer; }
 .school_guide .close-ico { top: -20px; }
 .download_guide .pop_wrapper .close:hover, .school_guide .close-ico:hover { background: transparent url('../imgs/app-guide-sprite.png') repeat scroll -60px -123px; }
-.school_guide .pop_wrapper { width: 450px; height: 310px; margin-left: -225px; margin-top: -155px; background-color: rgb(124, 212, 236); border-radius: 13px; color: rgb(255, 255, 255); font-size: 18px; line-height: 1.2em; text-align: center; }
+.school_guide .pop_wrapper { width: 450px; height: 272px; margin-left: -225px; margin-top: -155px; background-color: rgb(124, 212, 236); border-radius: 13px; color: rgb(255, 255, 255); font-size: 18px; line-height: 1.2em; text-align: center; }
 .school_guide .col-icon { background: transparent url('../imgs/col_school.png') no-repeat scroll center center; position: absolute; top: -82px; width: 100%; height: 130px; }
 .school_guide h4 { font-weight: normal; margin: 65px 0px 15px; }
 span.col-tip { display: block; width: 200px; margin: 0px auto; padding-top: 10px; border-top: 2px solid rgb(255, 255, 255); }

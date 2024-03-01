@@ -27,8 +27,8 @@
                     <div class="ershou-hd">
                         <p class="ershou-title">${goods.name}</p>
                         <div class=" discount">
-                        	<span class="buy-price">Original price: ${goods.buyPrice}</span>
-                        	<span class="ershou-price">Selling price: ${goods.sellPrice}</span>
+                        	<span class="buy-price">Original price: €${goods.buyPrice}    </span>
+                        	<span class="ershou-price">Price now: €${goods.sellPrice}</span>
                         </div>
                         <p class="bro-counts"><span>${goods.viewNumber}</span> views</p>
                     </div>
@@ -38,7 +38,7 @@
                     			<span>Goods id</span>
                     		</div>
                     		<div class="value">
-                    			<span id="pid">${goods.id}</span>
+                    			<span id="pid">#${goods.id}</span>
                     		</div>
                         </li>
                         <li class="ershou-time">
@@ -128,7 +128,7 @@
 												<#else>
 												<img class="avatar" src="/home/imgs/avatar1.png" alt="Avatar"/>
 												</#if>
-												<div class="commentator" style="padding-left:55px;padding-bottom:5px;color:rgb(75, 192, 165);border-bottom: 1px dashed rgb(75, 192, 165);">
+												<div class="commentator" style="padding-left:55px;padding-bottom:5px;color:rgb(0, 120, 139);border-bottom: 1px dashed rgb(0, 120, 139);">
 													<b>${comment.student.nickname!comment.student.sn}</b>
 													<#if comment.replyTo??><span class="rpy-to">${comment.replyTo}</span></#if>
 												</div>

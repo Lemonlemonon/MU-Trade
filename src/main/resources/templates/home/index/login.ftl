@@ -7,7 +7,7 @@
 
 </head>
 <body>
-<h1 style="color: #4BC0A5">${siteName!""}<sup></sup></h1>
+<h1 style="color: #00788b">${siteName!""}<sup></sup></h1>
 
 <div class="login" style="margin-top:50px;">
     
@@ -91,7 +91,7 @@
                               
                 <li>
                     <div class="inputArea">
-                        <input type="button" id="reg_button"  style="margin-top:10px;margin-left:85px;" class="button_blue" value="Sign up now"/> 
+                        <input type="button" id="reg_button"  style="margin-top:10px;margin-left:95px;" class="button_blue" value="Sign up now"/> 
                     </div>
                     
                 </li><div class="cl"></div>

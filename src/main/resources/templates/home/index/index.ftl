@@ -56,9 +56,9 @@
         <!-- Page jump Start -->
         <div class="pages">
             <#if pageBean.currentPage == 1>
-            <a class="page-arrow arrow-left" href="javascript:void(0)">First Page</a>
+            <a class="page-arrow arrow-left" href="javascript:void(0)">First</a>
             <#else>
-            <a class="page-arrow arrow-left" href="/home/index/index?name=${name!""}&currentPage=1">First Page</a>
+            <a class="page-arrow arrow-left" href="/home/index/index?name=${name!""}&currentPage=1">First</a>
             </#if>
             <#list pageBean.currentShowPage as showPage>
 	        <#if pageBean.currentPage == showPage>
@@ -68,9 +68,9 @@
            	</#if>
            	</#list>
            	<#if pageBean.currentPage == pageBean.totalPage>
-            <a class="page-arrow arrow-right" href="javascript:void(0)">Last Page</a>
+            <a class="page-arrow arrow-right" href="javascript:void(0)">Last</a>
             <#else>
-	        <a class="page-arrow arrow-right" href="/home/index/index?name=${name!""}&currentPage=${pageBean.totalPage}">Last Page</a>
+	        <a class="page-arrow arrow-right" href="/home/index/index?name=${name!""}&currentPage=${pageBean.totalPage}">Last</a>
 	        </#if>
         </div>
         <!-- Page jump End -->

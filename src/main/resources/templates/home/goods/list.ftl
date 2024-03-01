@@ -13,7 +13,7 @@
    		<div class="main center">
         <div class="label-wr center clearfix">
             <div id="nav-labels">
-                <button id="new_pro" class="labels" style="background:rgb(75, 192, 165);color:white;width:100%;padding-left: 8px;padding-right: 8px;" >Selected category: ${gc.name}</button>
+                <button id="new_pro" class="labels" style="background:rgb(0, 120, 139);color:white;width:100%;padding-left: 8px;padding-right: 8px;" >Selected category: ${gc.name}</button>
             </div>
            
         </div>
