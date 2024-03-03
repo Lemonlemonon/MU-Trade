@@ -133,4 +133,17 @@ public class CodeMsg {
 	public static CodeMsg HOME_STUDENT_REPORT_GOODS_ERROR = new CodeMsg(-40000, "Failed to report");
 	public static CodeMsg HOME_STUDENT_REPORTED_GOODS = new CodeMsg(-40001, "You've already reported this item!");
 	public static CodeMsg HOME_STUDENT_REPORTED_NO_EXIST = new CodeMsg(-40002, "Report not exist!");
+	
+	//Student center error code
+	public static CodeMsg HOME_STUDENT_EDITINFO_ERROR = new CodeMsg(-20000, "Failed to edit personal infomation!");
+	public static CodeMsg HOME_STUDENT_EDITPWD_OLD_ERROR = new CodeMsg(-20001, "Wrong old password!");
+	
+	//User goods publishing error code
+	public static CodeMsg HOME_STUDENT_PUBLISH_ERROR = new CodeMsg(-30000, "Failed to publish goods! Please try again!");
+	public static CodeMsg HOME_STUDENT_GOODS_EDIT_ERROR = new CodeMsg(-30001, "Failed to edit goods! Please try again!");
+	public static CodeMsg HOME_STUDENT_GOODS_NO_EXIST = new CodeMsg(-30002, "Goods not exist!");
+	public static CodeMsg HOME_STUDENT_PUBLISH_CATEGORY_EMPTY = new CodeMsg(-30003, "Please select category!");
+	
+	//User commenting error code
+	public static CodeMsg HOME_STUDENT_COMMENT_ADD_ERROR = new CodeMsg(-50000, "Failed to post comment! Please try again!");
 }
