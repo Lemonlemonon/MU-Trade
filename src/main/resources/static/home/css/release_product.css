@@ -189,7 +189,7 @@ div.init-up:hover .up-bg { transition: all 0.3s ease 0s; transform: rotate(-180d
 .select li:hover span::before { content: ""; display: inline-block; width: 8px; height: 8px; position: absolute; left: -15px; top: 50%; margin-top: -4px; border-radius: 100%; background-color: rgb(50, 195, 165); }
 .form-input-wr input { width: 100%; height: 28px; color: rgb(68, 68, 68); font-size: 1.17em; line-height: 28px; vertical-align: middle; background-color: transparent; }
 .form-input-wr textarea { color: rgb(68, 68, 68); }
-.goods-price .form-input-wr::before { content: "￥"; text-align: center; display: block; width: 30px; height: 40px; position: absolute; left: 0px; float: left; color: rgb(133, 142, 143); font-size: 1.33em; line-height: 40px; vertical-align: middle; top: 0px; }
+.goods-price .form-input-wr::before { content: "€"; text-align: center; display: block; width: 30px; height: 40px; position: absolute; left: 0px; float: left; color: rgb(133, 142, 143); font-size: 1.33em; line-height: 40px; vertical-align: middle; top: 0px; }
 .goods-price .form-input-wr { padding-left: 30px; position: relative; }
 .goods-discount .form-input-wr span { float: left; width: 49%; color: rgb(133, 142, 143); font-size: 1.17em; text-align: center; line-height: 28px; vertical-align: middle; cursor: pointer; }
 .goods-discount .form-input-wr span.sel { color: rgb(0, 172, 144); }
