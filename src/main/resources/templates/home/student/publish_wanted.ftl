@@ -31,7 +31,7 @@
                                 <span>Goods detail</span></div>
                             <div class="form-value">
                                 <div class="form-input-wr">
-                                    <textarea name="content" id="desc" placeholder="Description, condition, selling reason, etc." class="required" tips="Please enter Goods detail "></textarea>
+                                    <textarea name="content" id="desc" placeholder="Description, requirements, etc." class="required" tips="Please enter Goods detail "></textarea>
                                 </div>
                             </div>
                         </div>
