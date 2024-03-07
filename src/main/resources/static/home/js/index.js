@@ -1,23 +1,3 @@
-$(document).ready(function(){
-    login_slider();
-    // discriber();
-    login_close();
-    //ershou_photo_slide();
-    //wave_move();
-    //edit_info();
-    //change_photo();
-    /*choose_sch();*/
-    //student_id();
-    if($("#user_msg").length>0){
-        grade_value_slide();
-    }
-    if($("#intergral-wrapper").length>0){
-        scoreRotate();
-    }
-    if($(".return-to-top").length>0){
-        returnToTop();
-    }
-})
 function edit_info(){
     $("#edit_info").bind('click',function(){
         $(this).css({

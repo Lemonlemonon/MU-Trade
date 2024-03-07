@@ -75,7 +75,7 @@
       </form>
       <hr>
       <footer class="col-sm-12 text-center">
-        <p class="m-b-0">Copyright © 2024 <a href="${siteUrl!""}">Zhu Huang 20322253</a>. All right reserved</p>
+        <p class="m-b-0">Final year project: <a href="https://github.com/Lemonlemonon">Zhu Huang(20322253)</a>. Maynooth University 2024</p>
       </footer>
     </div>
   </div>

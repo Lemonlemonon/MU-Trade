@@ -162,7 +162,7 @@ div.comment .avatar::before, .post-comment .avatar::before { content: ""; displa
 .commenting, .commenting-unlogin { position: relative; border: 1px solid rgb(0, 120, 139); margin-right: 45px; margin-left: 60px; }
 .commenting::before, .commenting-unlogin::before { content: ""; display: block; position: absolute; left: -9px; top: -1px; width: 9px; height: 12px; background-image: url('../imgs/commenting-tri.png'); background-repeat: no-repeat; background-color: rgb(254, 254, 254); }
 .commenting-unlogin::before { background-image: url('../imgs/commenting-unlogin-tri.png'); }
-.commenting-unlogin, .tips { display: block; height: 60px; line-height: 60px; font-size: 1em; text-align: center; color: rgb(0, 172, 144); background-color: rgb(246, 249, 249); }
+.commenting-unlogin, .tips { display: block; height: 60px; line-height: 60px; font-size: 1em; text-align: center; color: rgb(0, 120, 139); background-color: rgb(246, 249, 249); }
 .comment-input-wr-wr { margin-right: 80px; }
 .comment-input-wr { width: 100%; height: 60px; float: left; }
 .sub-comment, .comment-login { width: 56px; height: 60px; background: transparent url('../imgs/comment-button.png') no-repeat scroll 0% 0%; color: rgb(255, 255, 255); font-size: 1.33em; text-indent: -9999em; float: right; cursor: pointer; }

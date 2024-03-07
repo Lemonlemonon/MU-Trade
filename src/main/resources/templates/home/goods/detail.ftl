@@ -178,7 +178,7 @@ $(document).ready(function(){
 		if($("#submit-comment-btn").attr('data-reply') != '0'){
 			data.replyTo = $("#submit-comment-btn").attr('data-reply');
 			data.content = data.content.replace('Replys: ' + data.replyTo + ':','')
-			data.content = 'Replys: "' + $("#submit-comment-btn").attr('data-reply-content') + '"<br>' + data.content;
+			data.content = 'Replys: “' + $("#submit-comment-btn").attr('data-reply-content') + '”<br>' + data.content;
 		}
 		ajaxRequest('/home/student/comment','post',data,function(){
 			alert('Comment posted!');

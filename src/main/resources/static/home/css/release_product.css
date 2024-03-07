@@ -129,7 +129,7 @@ textarea { overflow: auto; }
 #have_login { height: 50px; }
 .avatar { float: left; border: 1px solid rgb(0, 120, 139); padding: 3px; width: 40px; height: 40px; border-radius: 100%; }
 #person_info { height: 100%; cursor: pointer; position: relative; }
-.person_name { float: left; color: rgb(0, 172, 144); margin: 15px 0px 0px 15px; max-width: 75px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+.person_name { float: left; color: rgb(0, 120, 139); margin: 15px 0px 0px 15px; max-width: 75px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
 .grade { float: left; margin: 12px 0px 0px 10px; }
 .grade img { height: 20px; }
 .login_border { width: 170px; display: none; margin-top: 12px; position: absolute; bottom: -10px; }
@@ -192,7 +192,7 @@ div.init-up:hover .up-bg { transition: all 0.3s ease 0s; transform: rotate(-180d
 .goods-price .form-input-wr::before { content: "€"; text-align: center; display: block; width: 30px; height: 40px; position: absolute; left: 0px; float: left; color: rgb(133, 142, 143); font-size: 1.33em; line-height: 40px; vertical-align: middle; top: 0px; }
 .goods-price .form-input-wr { padding-left: 30px; position: relative; }
 .goods-discount .form-input-wr span { float: left; width: 49%; color: rgb(133, 142, 143); font-size: 1.17em; text-align: center; line-height: 28px; vertical-align: middle; cursor: pointer; }
-.goods-discount .form-input-wr span.sel { color: rgb(0, 172, 144); }
+.goods-discount .form-input-wr span.sel { color: rgb(0, 120, 139); }
 #desc { width: 100%; height: 138px; font-size: 1.17em; resize: none; background-color: transparent; }
 span.yes { border-right: 1px solid rgb(186, 200, 202); }
 .form-contact { display: block; height: auto; }

@@ -18,8 +18,8 @@
         
         <div class="fl-wrapper clearfix">
         <div class="wx-follow">
-            <a href="javascript:void(0);" class="fl-icon">
-                <img src="/home/imgs/weixin-fl.png">
+            <a href="https://www.maynoothuniversity.ie/" class="fl-icon">
+                <img src="/home/imgs/Minilogo.png">
             </a>
         </div>
        

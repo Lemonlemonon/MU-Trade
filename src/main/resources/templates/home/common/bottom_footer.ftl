@@ -11,7 +11,7 @@
             </#list>
             </#if>
             <li class="first">
-                <a href="/system/login" target="_blank" class="links">Admin Portal</a>
+                <a href="/system/index" target="_blank" class="links">Admin Portal</a>
             </li>
         </ul>
     </div>
