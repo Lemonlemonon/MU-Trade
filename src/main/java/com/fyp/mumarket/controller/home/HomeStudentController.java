@@ -3,6 +3,8 @@ package com.fyp.mumarket.controller.home;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Date;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,6 +31,8 @@ import com.fyp.mumarket.service.common.WantedGoodsService;
 import com.fyp.mumarket.util.SessionUtil;
 import com.fyp.mumarket.util.ValidateEntityUtil;
 
+import com.fyp.mumarket.dao.common.GoodsBiddingDao;
+import com.fyp.mumarket.entity.common.GoodsBidding;
 /**
  * Student Center Controller
  * @author Administrator
@@ -50,6 +54,8 @@ public class HomeStudentController {
 	private ReportGoodsService reportGoodsService;
 	@Autowired
 	private CommentService commentService;
+	@Autowired
+	private GoodsBiddingDao goodsBiddingDao;
 	/**
 	 * Student center page
 	 * @param model
@@ -129,9 +135,22 @@ public class HomeStudentController {
 		}
 		Student loginedStudent = (Student)SessionUtil.get(SessionConstant.SESSION_STUDENT_LOGIN_KEY);
 		goods.setStudent(loginedStudent);
-		if(goodsService.save(goods) == null){
+
+		//set up goods bidding information when publish
+		GoodsBidding goodsBidding = new GoodsBidding();
+		goodsBidding.setStatus(0);
+		goodsBidding.setCreateTime(new Date());
+		goodsBidding.setUpdateTime(new Date());
+		GoodsBidding bidding = goodsBiddingDao.save(goodsBidding);
+
+		goods.setGoodsBiddingId(bidding.getId());
+		Goods g = goodsService.save(goods);
+		if(g == null){
 			return Result.error(CodeMsg.HOME_STUDENT_PUBLISH_ERROR);
 		}
+		bidding.setGoodId(g.getId());
+		goodsBiddingDao.save(bidding);
+		
 		return Result.success(true);
 	}
 	

@@ -15,7 +15,7 @@ public class CodeMsg {
 	 * @param code
 	 * @param msg
 	 */
-	private CodeMsg(int code,String msg){
+	public CodeMsg(int code,String msg){
 		this.code = code;
 		this.msg = msg;
 	}

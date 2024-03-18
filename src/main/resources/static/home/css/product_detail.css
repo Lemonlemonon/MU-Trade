@@ -145,6 +145,7 @@ a.bigger-photo { display: block; width: 100%; height: 100%; overflow: hidden; li
 .complain a { color: rgb(153, 153, 153); font-size: 1em; text-decoration: none; }
 .complain a:hover { color: rgb(0, 120, 139); }
 .ershou-desc { margin-top: 20px; padding: 30px 90px; background-color: rgb(255, 255, 255); background-image: url('../imgs/info.png'); background-position: 12px 12px; background-repeat: no-repeat; text-align: left; }
+.auction { margin-top: 20px; padding: 30px 90px; background-color: rgb(255, 255, 255); }
 .avatar { width: 40px; height: 40px; border-radius: 100%; float: left; overflow: hidden; }
 .desc { min-height: 50px; color: rgb(102, 102, 102); font-size: 1.17em; line-height: 23px; }
 .comments { position: relative; width: 525px; float: left; padding: 54px 0px 25px 15px; margin-top: 20px; background-color: rgb(255, 255, 255); }

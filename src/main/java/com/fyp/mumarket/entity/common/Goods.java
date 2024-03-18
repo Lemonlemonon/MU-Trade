@@ -79,6 +79,17 @@ public class Goods extends BaseEntity{
 	@Column(name="view_number",nullable=false,length=8)
 	private int viewNumber = 0;//Item page views
 
+	@Column(name="goods_bidding_id")
+	private Long goodsBiddingId;//Ads Bidding id
+
+	public Long getGoodsBiddingId() {
+		return goodsBiddingId;
+	}
+
+	public void setGoodsBiddingId(Long goodsBiddingId) {
+		this.goodsBiddingId = goodsBiddingId;
+	}
+	
 	public String getName() {
 		return name;
 	}

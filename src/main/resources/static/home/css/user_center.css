@@ -210,13 +210,14 @@ div.center { position: relative; }
 .make_edition { margin-right: 10px; }
 #my_enshrine, #my_info, #my_messages, #my_products { min-height: 300px; }
 #onsale_pro h1 { background: transparent url('../imgs/onsaling.png') no-repeat scroll 0% 0%; }
-.enshr_each { background: rgb(255, 255, 255) none repeat scroll 0% 0%; height: 140px; margin-top: 10px; }
-.enshr_info { position: relative; float: right; width: 740px; padding: 20px; }
+.enshr_each { background: rgb(255, 255, 255) none repeat scroll 0% 0%; height: 160px; margin-top: 10px; }
+.enshr_info { position: relative; float: right; width: 740px; padding: 20px;display: flex;flex-direction: column; }
 .enshr_info h2 { margin-bottom: 10px; }
 .enshr_info h2 a { color: rgb(27, 129, 108); font: 14px "Microsoft YaHei"; text-decoration: none; }
 .enshr_info h2 a:hover { color: rgb(235, 80, 85); }
 .enshr_info p { color: rgb(102, 102, 102); font: 12px "Microsoft YaHei"; margin-bottom: 10px; height: 35px; overflow: auto; }
 .enshr_state { position: absolute; bottom: -10px; width: 100%; }
+.enshr_stateBtn { margin-top: 10px;align-self: flex-end; }
 #my_enshrine .enshr_state span.enshrine_it:hover, #my_products .enshr_state span.enshrine_it:hover { color: rgb(255, 198, 0); border: 1px solid rgb(255, 198, 0); }
 .enshrine_it { font: 12px "Microsoft YaHei"; float: right; margin-right: 50px; display: block; color: rgb(0, 120, 139); border: 1px solid rgb(0, 120, 139); padding: 3px 10px; border-radius: 13px; cursor: pointer; }
 #my_enshrine .enshr_state span.enshrine_it:hover, #my_products .enshr_state span.enshrine_it:hover { color: rgb(255, 198, 0); border: 1px solid rgb(255, 198, 0); }

@@ -128,6 +128,7 @@ $(document).ready(function() {
 			dataType:'json',
 			success: function(res) {
 					//alert("res:"+res+"\n"+"resLength:"+res.length)
+					//console.log(res)
 					if(res.code == 0){
 						window.location.href = 'index';
 						return;

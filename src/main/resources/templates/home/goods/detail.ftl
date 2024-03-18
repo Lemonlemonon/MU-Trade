@@ -7,6 +7,31 @@
 <link media="all" href="/home/css/product_detail.css" type="text/css" rel="stylesheet">
 <link media="all" href="/home/css/index.css" type="text/css" rel="stylesheet">
 </head>
+
+<style>
+	/*bidding button styling*/
+	.auction {
+		/*display: flex;*/
+		/*flex-direction: column;*/
+		margin-top: 20px;
+		padding: 30px 90px;
+		background-color: rgb(255, 255, 255);
+	}
+	.auction>span {
+		margin-right: 20px;
+	}
+	.auction >.auctionBtn {
+		padding: 10px 20px;
+		background: #ffb300;
+		color: #FFF;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+	.auction >.auctionBtn:hover {
+		background: rgb(207 148 6);
+	}
+</style>
+
 <body>
   <#include "../common/top_header.ftl"/>
   <#include "../common/left_menu.ftl"/>
@@ -14,8 +39,6 @@
         <div class="main center clearfix">
             <div class="ershou-details">
                 <div class="ershou-photos-wr">
-	            		 <!-- Favourite feature
-	                    <a class="ershou-favorite" href="javascript:void(0);" style="background-image: url('heart.png');" onclick="favorites();">0</a> -->
                        <!-- Play images-->
                         <div class="bigger-photo-box">
                         	<a class="bigger-photo hide show" rel="img_group" href="">
@@ -84,6 +107,18 @@
             		<p id="user_cmt">${goods.content}</p>
             	</div>
             </div>
+			<!--Bidding section-->
+			<#if goods.goodsBiddingId?? && fyp_student??>
+				<div class="auction">
+					<span>Current bid: €<span id="CurrentAuctionPrice">--</span></span>
+					<span>From user: <span id="CurrentBidder">--</span></span>
+					<input id="auctionInput" type="number" placeholder="Your max bid(€):" border: 10px>
+					<a href="javascript:void(0);" class="auctionBtn" onclick="auctionInitiate(${goods.goodsBiddingId});">Place your bid</a>
+					<input style="opacity: 0" disabled value="${fyp_student.nickname!""}" id="auctionNickname" type="text">
+					<input style="opacity: 0;width: 20px" disabled value="${goods.goodsBiddingId}" id="auctiongoodsBiddingId" type="text">
+				</div>
+			</#if>
+
             <!--Comment section-->
             <div class="comments want-comments" style="width:98.5%">
 				<div class="comments-wr" style="border-left:0px;">
@@ -182,7 +217,7 @@ $(document).ready(function(){
 		}
 		ajaxRequest('/home/student/comment','post',data,function(){
 			alert('Comment posted!');
-			window.location.reload();
+			//window.location.reload();
 		});
 	});
 	
@@ -191,7 +226,21 @@ $(document).ready(function(){
 		$("#submit-comment-btn").attr('data-reply',$(this).attr('data-name'))
 		$("#submit-comment-btn").attr('data-reply-content',$(this).attr('data-reply'))
 	});
+
+	// Get the current bidder of the Ads
+	var goodsBiddingsId = $("#auctiongoodsBiddingId").val();
+	var fyp_studentName = $("#auctionNickname").val();
+	if (goodsBiddingsId && fyp_studentName) {
+		console.log("test123")
+		GetAuctionInformation(1)
+	} else {
+		console.log("test321")
+	}
+
 });
+$(window).on('unload', function(){
+	GetAuctionInformation(0)
+})
 function report(id){
 	var content = prompt("Please enter report reason");
 	if(content == null || content == ''){
@@ -201,6 +250,67 @@ function report(id){
 	ajaxRequest('/home/student/report_goods','post',{'goods.id':id,content:content},function(){
 		alert('Report has been sent!');
 	});
-}
+};
+// Get bidding information
+function GetAuctionInformation (id) {
+	var setIntervals = null
+	if (id == 0) {
+		clearInterval(setIntervals)
+		return
+	}
+	setIntervals = setInterval(() => {
+		$.ajax({
+			url:'/bidding/top_price',
+			type:'get',
+			data: {"biddingId":${goods.goodsBiddingId}},
+			dataType:'json',
+			success:function(res){
+				if (res.code == 400) {
+					return
+				}
+				$("#CurrentAuctionPrice").html(res.data.price)
+				$("#CurrentBidder").html(res.data.userName)
+			}
+		});
+	}, 3000)
+};
+// Place bidding
+function auctionInitiate (id) {
+	let price = $("#auctionInput").val();
+	let name = $("#auctionNickname").val(); // User nick name
+	let CurrentBidder = $("#CurrentBidder").text() // Current bidder name
+	let userid = $("#userid").text() // Seller id
+	if (price == '' || price == 0) {
+		alert('Please enter your max bidding!');
+		return
+	}
+	if (name == userid) {
+		alert('Sorry, you CANNOT bid on your own Ads');
+		$("#auctionInput").val('')
+		return
+	}
+	if (name == CurrentBidder) {
+		alert('Sorry, you are already the current bidder!');
+		$("#auctionInput").val('')
+		return
+	}
+	$.ajax({
+		type: "POST" ,
+		url: "/bidding/create-bidding",
+		data: JSON.stringify({"userId":${fyp_student.id},"biddingId": id,"biddingPrice": price*100,"userName": name}),
+		contentType: "application/json",
+		dataType:'json',
+		success: function(res) {
+			if (res.code == 0) {
+				alert('Your have successfully placed your bidding!');
+				$("#auctionInput").val('')
+				return
+			}
+			alert(res.data?res.data:res.msg);
+		}
+	});
+	// $("#auctionInput").val('')
+	// console.log(id, price)
+};
 </script>	
 </html>

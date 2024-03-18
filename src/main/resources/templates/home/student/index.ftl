@@ -159,7 +159,7 @@
 	                    <div class="enshr_info">
 	                        <h2><a href="../goods/detail?id=${goods.id}" title="${goods.name}">${goods.name}</a></h2>
 	                        <p style="overflow:hidden;">${goods.content}</p>
-	                        <div class="enshr_state">
+	                        <div>
 	                        <span id="prostate">
 	                        	Status:
 	                        	<#if goods.status ==1>
@@ -179,6 +179,9 @@
 	                        	</#if>
 	                        </span>
 	                        &nbsp;&nbsp;<span id="prostate">Added time:${goods.updateTime}</span>
+
+                            </div>
+                            <div class="enshr_stateBtn">
 	                            <#if goods.status == 1>
 	                            <span class="enshrine_it" onclick="sellout(${goods.id});">Confirm sold</span>
 	                            <#elseif goods.status == 3>
@@ -198,6 +201,14 @@
 	                                <span class="enshrine_it  make_edition">Edit</span>
 	                            </a>
 	                            
+                                <#if goods.goodsBiddingId??>
+                                <a href="javascript:void(0);" onclick="StopBiddingStopBidding(${goods.goodsBiddingId});">
+                                    <span class="enshrine_it  make_edition">End bid</span>
+                                </a>
+                                <a href="javascript:void(0);" onclick="AuctionReset(${goods.id});">
+                                    <span class="enshrine_it  make_edition">Reset bid</span>
+                                </a>
+                                </#if>
 	                        </div>
 	                    </div>
 	                    <a href="../goods/detail?id=${goods.id}">
@@ -296,6 +307,43 @@ function delReport(id){
 		window.location.reload();
 	});
 }
+
+// StopBidding
+function StopBiddingStopBidding(id) {
+    console.log(id)
+    ajaxRequest('/bidding/stop-bidding','put',{goodsBiddingId:id},function(res){
+        console.log(res)
+        if (res.code == 0) {
+            alert(res.data)
+            window.location.reload();
+            return
+        }
+        alert(res.data)
+    });
+    // $.ajax({
+    //     type: "PUT" ,
+    //     url: "/bidding/stop-bidding",
+    //     data: JSON.stringify({"goodsBiddingId": id}),
+    //     contentType: "application/json",
+    //     dataType:'json',
+    //     success: function(res) {
+    //         console.log(res)
+    //     }
+    // });
+}
+// Reset bidding
+function AuctionReset(id) {
+    console.log(id)
+    ajaxRequest('/bidding/reset-bidding','post',{goodsId:id},function(res){
+        console.log(res)
+        if (res.code == 0) {
+            alert(res.data)
+            return
+        }
+        alert(res.data)
+    });
+}
+
 $(document).ready(function(){
 	ajaxRequest('get_stats','post',{},function(rst){
 		$("#goodsTotal").text(rst.data.goodsTotal);

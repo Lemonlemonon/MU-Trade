@@ -1,6 +1,7 @@
 package com.fyp.mumarket.dao.common;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
@@ -68,4 +69,11 @@ public interface GoodsDao extends JpaRepository<Goods, Long>,JpaSpecificationExe
 	 */
 	@Query(value="select * from fyp_goods where name like %:name%",nativeQuery=true)
 	List<Goods> findListByName(@Param("name")String name);
+
+	/**
+	 * Find Goods by bidding id
+	 * @param biddingId
+	 * @return
+	 */
+	Optional<Goods> findByGoodsBiddingId(@Param("biddingId") Long biddingId);
 }
