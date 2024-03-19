@@ -1,6 +1,6 @@
 package com.fyp.mumarket.bean;
 /**
- * error code processing class. All error codes are defined here.
+ * Error code processing class. All error codes are defined here.
  * @author Administrator
  *
  */
@@ -97,30 +97,30 @@ public class CodeMsg {
 	public static CodeMsg ADMIN_DATABASE_BACKUP_NO_EXIST = new CodeMsg(-8000, "Backup record does not exisit!");
 
 	//Item and category management error code
-	public static CodeMsg ADMIN_GOODSCATEGORY_ADD_ERROR = new CodeMsg(-9000, "Category creation failed, please contact the administrator!");
-	public static CodeMsg ADMIN_GOODSCATEGORY_EDIT_ERROR = new CodeMsg(-9001, "Category editing failed, please contact the administrator!");
-	public static CodeMsg ADMIN_GOODSCATEGORY_DELETE_ERROR = new CodeMsg(-9002, "There are subcategories or item information under this category, deletion is not allowed. Please delete the subcategories or item information first before proceeding!");
-	public static CodeMsg ADMIN_GOODS_NO_EXIST = new CodeMsg(-9003, "Item is not exsist!");
-	public static CodeMsg ADMIN_GOODS_STATUS_NO_CHANGE = new CodeMsg(-9004, "Item status change fail!");
-	public static CodeMsg ADMIN_GOODS_STATUS_ERROR = new CodeMsg(-9005, "Item status error!");
-	public static CodeMsg ADMIN_GOODS_EDIT_ERROR = new CodeMsg(-9006, "Item status editing failed, please contact the administrator!");
-	public static CodeMsg ADMIN_GOODS_STATUS_UNABLE = new CodeMsg(-9007, "Item status cannot be edited (items that have been sold cannot be put back on sale)!");
-	public static CodeMsg ADMIN_GOODS_DELETE_ERROR = new CodeMsg(-9008, "This item has comments or report information and cannot be deleted. Please delete the comments or reports first before proceeding!");
+	public static CodeMsg ADMIN_ADSCATEGORY_ADD_ERROR = new CodeMsg(-9000, "Category creation failed, please contact the administrator!");
+	public static CodeMsg ADMIN_ADSCATEGORY_EDIT_ERROR = new CodeMsg(-9001, "Category editing failed, please contact the administrator!");
+	public static CodeMsg ADMIN_ADSCATEGORY_DELETE_ERROR = new CodeMsg(-9002, "There are subcategories or item information under this category, deletion is not allowed. Please delete the subcategories or item information first before proceeding!");
+	public static CodeMsg ADMIN_ADS_NO_EXIST = new CodeMsg(-9003, "Item is not exsist!");
+	public static CodeMsg ADMIN_ADS_STATUS_NO_CHANGE = new CodeMsg(-9004, "Item status change fail!");
+	public static CodeMsg ADMIN_ADS_STATUS_ERROR = new CodeMsg(-9005, "Item status error!");
+	public static CodeMsg ADMIN_ADS_EDIT_ERROR = new CodeMsg(-9006, "Item status editing failed, please contact the administrator!");
+	public static CodeMsg ADMIN_ADS_STATUS_UNABLE = new CodeMsg(-9007, "Item status cannot be edited (items that have been sold cannot be put back on sale)!");
+	public static CodeMsg ADMIN_ADS_DELETE_ERROR = new CodeMsg(-9008, "This item has comments or report information and cannot be deleted. Please delete the comments or reports first before proceeding!");
 	
 	//Student management error code
 	public static CodeMsg ADMIN_STUDENT_NO_EXIST = new CodeMsg(-9100, "Student does not exist!");
 	public static CodeMsg ADMIN_STUDENT_STATUS_NO_CHANGE = new CodeMsg(-9101, "Student status has not changed!");
 	public static CodeMsg ADMIN_STUDENT_STATUS_ERROR = new CodeMsg(-9102, "Student status error!");
 	public static CodeMsg ADMIN_STUDENT_EDIT_ERROR = new CodeMsg(-9103, "Student editing error, please contact the administrator!");
-	public static CodeMsg ADMIN_STUDENT_DELETE_ERROR = new CodeMsg(-9104, "There are associated data (items, wanted items, comments, reports, etc.) under this student. Please delete the associated data first before proceeding!");
+	public static CodeMsg ADMIN_STUDENT_DELETE_ERROR = new CodeMsg(-9104, "There are associated data (items, request items, comments, reports, etc.) under this student. Please delete the associated data first before proceeding!");
 	
 	//News management error code
 	public static CodeMsg ADMIN_NEWS_ADD_ERROR = new CodeMsg(-9200, "Failed to add the News!");
 	public static CodeMsg ADMIN_NEWS_EDIT_ERROR = new CodeMsg(-9201, "Failed to edit the News!");
 	
 	//Related site management error code
-	public static CodeMsg ADMIN_FRIENDLINK_ADD_ERROR = new CodeMsg(-9300, "Failed to add site!");
-	public static CodeMsg ADMIN_FRIENDLINK_EDIT_ERROR = new CodeMsg(-9301, "Failed to edit site!");
+	public static CodeMsg ADMIN_RELATEDSITE_ADD_ERROR = new CodeMsg(-9300, "Failed to add site!");
+	public static CodeMsg ADMIN_RELATEDSITE_EDIT_ERROR = new CodeMsg(-9301, "Failed to edit site!");
 	
 	//Home page login error code
 	public static CodeMsg HOME_STUDENT_REGISTER_SN_EXIST = new CodeMsg(-10000, "This student id already registered!");
@@ -130,18 +130,18 @@ public class CodeMsg {
 	public static CodeMsg HOME_STUDENT_UNABLE = new CodeMsg(-10003, "User account has been frozen!");
 	
 	//User report error code
-	public static CodeMsg HOME_STUDENT_REPORT_GOODS_ERROR = new CodeMsg(-40000, "Failed to report");
-	public static CodeMsg HOME_STUDENT_REPORTED_GOODS = new CodeMsg(-40001, "You've already reported this item!");
+	public static CodeMsg HOME_STUDENT_REPORT_ADS_ERROR = new CodeMsg(-40000, "Failed to report");
+	public static CodeMsg HOME_STUDENT_REPORTED_ADS = new CodeMsg(-40001, "You've already reported this item!");
 	public static CodeMsg HOME_STUDENT_REPORTED_NO_EXIST = new CodeMsg(-40002, "Report not exist!");
 	
 	//Student center error code
 	public static CodeMsg HOME_STUDENT_EDITINFO_ERROR = new CodeMsg(-20000, "Failed to edit personal infomation!");
 	public static CodeMsg HOME_STUDENT_EDITPWD_OLD_ERROR = new CodeMsg(-20001, "Wrong old password!");
 	
-	//User goods publishing error code
-	public static CodeMsg HOME_STUDENT_PUBLISH_ERROR = new CodeMsg(-30000, "Failed to publish goods! Please try again!");
-	public static CodeMsg HOME_STUDENT_GOODS_EDIT_ERROR = new CodeMsg(-30001, "Failed to edit goods! Please try again!");
-	public static CodeMsg HOME_STUDENT_GOODS_NO_EXIST = new CodeMsg(-30002, "Goods not exist!");
+	//User ads publishing error code
+	public static CodeMsg HOME_STUDENT_PUBLISH_ERROR = new CodeMsg(-30000, "Failed to publish ads! Please try again!");
+	public static CodeMsg HOME_STUDENT_ADS_EDIT_ERROR = new CodeMsg(-30001, "Failed to edit ads! Please try again!");
+	public static CodeMsg HOME_STUDENT_ADS_NO_EXIST = new CodeMsg(-30002, "Ads not exist!");
 	public static CodeMsg HOME_STUDENT_PUBLISH_CATEGORY_EMPTY = new CodeMsg(-30003, "Please select category!");
 	
 	//User commenting error code

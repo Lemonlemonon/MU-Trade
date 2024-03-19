@@ -1,7 +1,7 @@
 <aside>
        
         <div id="release-button1" >
-             <a  href="/home/student/publish_wanted" style="color: white" id="want-buy""> BUY</a> 
+             <a  href="/home/student/publish_request" style="color: white" id="want-buy""> BUY</a> 
         </div>
         <br><br>
         <div id="release-button2" >
@@ -9,7 +9,7 @@
         </div>       
         <br><br>
         <div id="release-button3" >
-            <a  href="/home/wanted_goods/list" style="color: white" > REQUST</a>
+            <a  href="/home/request_ads/list" style="color: white" > REQUST</a>
         </div>
 
         <div class="helped ">

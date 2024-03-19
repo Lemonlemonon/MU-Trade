@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.fyp.mumarket.bean.PageBean;
 import com.fyp.mumarket.bean.Result;
 import com.fyp.mumarket.entity.common.Comment;
-import com.fyp.mumarket.entity.common.Goods;
+import com.fyp.mumarket.entity.common.Ads;
 import com.fyp.mumarket.entity.common.Student;
 import com.fyp.mumarket.service.common.CommentService;
-import com.fyp.mumarket.service.common.GoodsService;
+import com.fyp.mumarket.service.common.AdsService;
 import com.fyp.mumarket.service.common.StudentService;
 
 /**
@@ -29,7 +29,7 @@ import com.fyp.mumarket.service.common.StudentService;
 public class CommentController {
 
 	@Autowired
-	private GoodsService goodsService;
+	private AdsService adsService;
 	@Autowired
 	private StudentService studentService;
 	@Autowired
@@ -50,15 +50,15 @@ public class CommentController {
 				comment.setStudent(student);
 			}
 		}
-		List<Goods> goodsList = null;
-		if(comment.getGoods() != null && comment.getGoods().getName() != null){
-			goodsList = goodsService.findListByName(comment.getGoods().getName());
+		List<Ads> adsList = null;
+		if(comment.getAds() != null && comment.getAds().getName() != null){
+			adsList = adsService.findListByName(comment.getAds().getName());
 		}
 		model.addAttribute("title", "Comment list");
 		model.addAttribute("content", comment.getContent());
-		model.addAttribute("name", comment.getGoods() == null ? null : comment.getGoods().getName());
+		model.addAttribute("name", comment.getAds() == null ? null : comment.getAds().getName());
 		model.addAttribute("sn", comment.getStudent() == null ? null : comment.getStudent().getSn());
-		model.addAttribute("pageBean", commentService.findlist(pageBean, comment,goodsList));
+		model.addAttribute("pageBean", commentService.findlist(pageBean, comment,adsList));
 		return "admin/comment/list";
 	}
 	

@@ -6,8 +6,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import com.fyp.mumarket.constant.SessionConstant;
 import com.fyp.mumarket.entity.admin.User;
+import com.fyp.mumarket.interceptor.constant.SessionConstant;
 
 /**
  * Session unified operation utility class

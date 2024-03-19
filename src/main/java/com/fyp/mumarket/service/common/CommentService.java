@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 import com.fyp.mumarket.bean.PageBean;
 import com.fyp.mumarket.dao.common.CommentDao;
 import com.fyp.mumarket.entity.common.Comment;
-import com.fyp.mumarket.entity.common.Goods;
+import com.fyp.mumarket.entity.common.Ads;
 import com.fyp.mumarket.entity.common.Student;
 
 @Service
@@ -27,7 +27,7 @@ public class CommentService {
 	
 	/**
 	 * Save comment
-	 * @param goods
+	 * @param ads
 	 * @return
 	 */
 	public Comment save(Comment comment){
@@ -58,11 +58,11 @@ public class CommentService {
 	
 	/**
 	 * Search comment by item
-	 * @param goods
+	 * @param ads
 	 * @return
 	 */
-	public List<Comment> findByGoods(Goods goods){
-		return commentDao.findByGoods(goods);
+	public List<Comment> findByAds(Ads ads){
+		return commentDao.findByAds(ads);
 	}
 	
 	/**
@@ -71,8 +71,8 @@ public class CommentService {
 	 * @param studentId
 	 * @return
 	 */
-	public Comment find(Long goodsId,Long studentId){
-		return commentDao.find(goodsId, studentId);
+	public Comment find(Long adsId,Long studentId){
+		return commentDao.find(adsId, studentId);
 	}
 	
 	/**
@@ -88,10 +88,10 @@ public class CommentService {
 	 * Search comment with filter
 	 * @param pageBean
 	 * @param comment
-	 * @param goodsList
+	 * @param adsList
 	 * @return
 	 */
-	public PageBean<Comment> findlist(PageBean<Comment> pageBean,Comment comment,List<Goods> goodsList){
+	public PageBean<Comment> findlist(PageBean<Comment> pageBean,Comment comment,List<Ads> adsList){
 		
 		Specification<Comment> specification = new Specification<Comment>() {
 			/**
@@ -107,9 +107,9 @@ public class CommentService {
 					Predicate equal1 = criteriaBuilder.equal(root.get("student"), comment.getStudent().getId());
 					predicate = criteriaBuilder.and(predicate,equal1);
 				}
-				if(goodsList != null && goodsList.size() >0 ){
-					In<Object> in = criteriaBuilder.in(root.get("goods"));
-					in.value(goodsList);
+				if(adsList != null && adsList.size() >0 ){
+					In<Object> in = criteriaBuilder.in(root.get("ads"));
+					in.value(adsList);
 					predicate = criteriaBuilder.and(predicate,in);
 				}
 				return predicate;

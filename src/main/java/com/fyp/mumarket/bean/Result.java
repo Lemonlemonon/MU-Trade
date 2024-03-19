@@ -1,12 +1,21 @@
 package com.fyp.mumarket.bean;
 /**
- * Unified result class for AJAX submissions
+ * Result class for AJAX submissions
  * @author Administrator
  *
  */
 public class Result<T> {
 	
 	private int code;//error code
+	
+	@Override
+	public String toString() {
+		return "Result{" +
+				"code=" + code +
+				", msg='" + msg + '\'' +
+				", data=" + data +
+				'}';
+	}
 	
 	private String msg;//msg return
 	
@@ -49,7 +58,7 @@ public class Result<T> {
 	}
 
 	/**
-	 * Unified error return method. All errors call this method.
+	 * Error returning method. All errors call this method.
 	 * @param codeMsg
 	 * @return
 	 */

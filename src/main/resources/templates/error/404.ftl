@@ -36,7 +36,7 @@ body{
     <div class="error-body text-center">
       <h1>404</h1>
       <h4>Sorry, page not found!</h4>
-      <a href="/system/index" class="btn btn-primary ">Return homepage</a>
+      <a href="/home/index/index" class="btn btn-primary ">Return homepage</a>
     </div>
   </div>
 </section>

@@ -16,6 +16,12 @@ public class MsgVo {
   public void setSendId(String sendId) {
     this.sendId = sendId;
   }
+  
+  public MsgVo(Long receiverId, String sendId, String content) {
+	    this.receiverId = receiverId;
+	    this.sendId = sendId;
+	    this.content = content;
+	  }
 
   private String sendId;
   

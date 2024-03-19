@@ -44,7 +44,7 @@ footer { padding: 0px 0px 20px; background: rgb(247, 250, 249) url('../imgs/foot
 footer a { color: rgb(102, 102, 102); text-decoration: none; }
 footer a:hover { color: rgb(237, 78, 81); }
 .site-msg { margin: 10px 0px 0px; color: rgb(133, 142, 143); text-align: center; }
-nav { position: fixed; z-index: 80; left: 0px; top: 0px; width: 120px; height: 100%; background-color: rgb(255, 255, 255); box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.1); transition: all 0.2s linear 0s; }
+nav { position: fixed; z-index: 80; left: 0px; top: 0px; width: 153px; height: 100%; background-color: rgb(255, 255, 255); box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.1); transition: all 0.2s linear 0s; }
 nav ul { list-style: outside none none; color: rgb(102, 102, 102); }
 nav ul li { border-bottom: 1px solid rgb(224, 235, 231); position: relative; }
 nav a { display: block; height: 100%; color: inherit; font-size: inherit; text-decoration: inherit; }
@@ -64,7 +64,7 @@ li.catg .sub-nav a:hover { color: rgb(255, 198, 0); }
 .catg .nav-icons { float: left; height: 60px; width: 26px; margin-left: 12px; text-align: center; }
 .catg .nav-icons {  }
 .nav-icons img { vertical-align: middle; }
-.catg h3 { float: right; width: 60px; height: 100%; margin-right: 9px; text-align: left; overflow: hidden; font-size: 14px; }
+.catg h3 { float: right; width: 95px; height: 100%; margin-right: 9px; text-align: left; overflow: hidden; font-size: 14px; }
 .area .switch:hover { color: rgb(237, 78, 81); border-bottom-color: rgb(237, 78, 81); }
 li.catg:hover a, li.area:hover > div { box-shadow: 0px 0px 7px rgba(0, 120, 139) inset; }
 aside { width: 140px; position: fixed; top: 170px; right: 20px; }

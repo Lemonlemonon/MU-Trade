@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import com.alibaba.fastjson.JSON;
 import com.fyp.mumarket.bean.CodeMsg;
-import com.fyp.mumarket.constant.SessionConstant;
+import com.fyp.mumarket.interceptor.constant.SessionConstant;
 import com.fyp.mumarket.util.StringUtil;
 
 //Home page login intercepter

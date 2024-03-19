@@ -71,14 +71,14 @@ public class PageBean<T> {
 	}
 
 	public List<Integer> getCurrentShowPage() {
-		//First, display `currentShowPage` pages before the current page
+		//First,  display pages that are before the current page
 		for(int i = currentPage - 1;i > 0; i--){
 			currentShowPage.add(i);
 			if(i <= (currentPage - showPageSize)){
 				break;
 			}
 		}
-		//Next, display `currentShowPage` pages after the current page
+		//Next, display pages that are after the current page
 		for(int i = currentPage;i <= totalPage; i++){
 			currentShowPage.add(i);
 			if(i >= totalPage){

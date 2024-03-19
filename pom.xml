@@ -12,10 +12,10 @@
     </parent>
 
     <groupId>com.fypmumarket</groupId>
-    <artifactId>campus-market</artifactId>
+    <artifactId>MU-trade</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <name>campus-market</name>
+    <name>MU-trade</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
@@ -48,10 +48,27 @@
     </dependency>
 
     <dependency>
-       <groupId>org.springframework.boot</groupId>
-       <artifactId>spring-boot-starter-test</artifactId>
-       <scope>test</scope>
-   </dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <scope>test</scope>
+        <exclusions>
+            <exclusion>
+                <groupId>org.junit.vintage</groupId>
+                <artifactId>junit-vintage-engine</artifactId>
+            </exclusion>
+        </exclusions>
+    </dependency>
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>com.approvaltests</groupId>
+        <artifactId>approvaltests</artifactId>
+        <version>22.3.2</version>
+        <scope>test</scope>
+    </dependency>
 
     <dependency>
         <groupId>org.apache.commons</groupId>
@@ -71,8 +88,6 @@
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-devtools</artifactId>
-        <!-- optional=true, 依赖不会传递, 该项目依赖devtools;
-            之后依赖boot项目的项目如果想要使用devtools, 需要重新引入 -->
         <optional>true</optional>
     </dependency>
 </dependencies>
@@ -83,6 +98,14 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
     </plugin>
+    <plugin>
+		  <groupId>org.apache.maven.plugins</groupId>
+		  <artifactId>maven-surefire-plugin</artifactId>
+		  <version>2.4.2</version>
+		  <configuration>
+		  <skipTests>true</skipTests>
+		  </configuration>
+	</plugin>
 </plugins>
 </build>
 

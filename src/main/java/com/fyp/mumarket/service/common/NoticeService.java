@@ -2,11 +2,11 @@ package com.fyp.mumarket.service.common;
 
 import com.fyp.mumarket.bean.CodeMsg;
 import com.fyp.mumarket.bean.Result;
-import com.fyp.mumarket.dao.common.GoodsBiddingDao;
-import com.fyp.mumarket.dao.common.GoodsDao;
+import com.fyp.mumarket.dao.common.AdsBiddingDao;
+import com.fyp.mumarket.dao.common.AdsDao;
 import com.fyp.mumarket.dao.common.NoticeDao;
-import com.fyp.mumarket.entity.common.Goods;
-import com.fyp.mumarket.entity.common.GoodsBidding;
+import com.fyp.mumarket.entity.common.Ads;
+import com.fyp.mumarket.entity.common.AdsBidding;
 import com.fyp.mumarket.entity.common.MsgVo;
 import com.fyp.mumarket.entity.common.Notice;
 import java.util.ArrayList;

@@ -15,8 +15,7 @@ function edit_info(){
     });
     $("#save_info").bind('click',function(){
         var nickname = $("#nickname").val(),
-            phone = $("#phone").val(),
-            qq = $("#qq").val();
+            phone = $("#phone").val();
         $.post(
             '/user/modify',
             {

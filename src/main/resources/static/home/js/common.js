@@ -101,11 +101,6 @@ String.prototype.right = function(i) { //Add a Right method for String object
         return /^([\.a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/.test(value);
     }
 
-    function validQQ(value) {
-        if(value == "" || value == null) return 0;
-        return /[0-9]{6,11}/.test(value);
-    }
-
     function formValid(type, value) {
         switch(type) {
             case "text":
@@ -253,7 +248,7 @@ String.prototype.right = function(i) { //Add a Right method for String object
     windowScroll.bind();
     searchBox.bind();
     //Retrieve total item sold
-    ajaxRequest('/home/goods/get_sold_total','post',{},function(rst){
+    ajaxRequest('/home/ads/get_sold_total','post',{},function(rst){
     	$("#order-count").text(rst.data);
 	});
 })();
@@ -374,10 +369,10 @@ $(".login-form-container").find(".submit").on("click", login);
 $(".reg-form-container").find(".submit").on("click", register);
 
 function favorites(){//Fav item
-    var goods_id = $("#goods_id").val(),
+    var ads_id = $("#ads_id").val(),
         favorites_num = parseInt($(".ershou-favorite").text()),
         background_image = '';
-    $.post('/goods/favorites', {goods_id : goods_id}, function(res){
+    $.post('/ads/favorites', {ads_id : ads_id}, function(res){
         res = $.parseJSON(res);
         if (res.code != 0) {
             alert(res.msg);
@@ -394,14 +389,14 @@ function favorites(){//Fav item
     });
 }
 
-function cancel_favorites(goods_id){//Cancel fav
-    $.post('/goods/cancel_favorites', {goods_id : goods_id}, function(res){
+function cancel_favorites(ads_id){//Cancel fav
+    $.post('/ads/cancel_favorites', {ads_id : ads_id}, function(res){
         res = $.parseJSON(res);
         if (res.code != 0) {
             alert(res.msg);
             return;
         }
-        $("#goods"+goods_id).remove();
+        $("#ads"+ads_id).remove();
     });
 }
 
@@ -446,9 +441,9 @@ function off_shelf(pid){
     });
 }
 
-function on_shelf(goods_id)
+function on_shelf(ads_id)
 {
-    $.post('/goods/on_shelf', {goods_id : goods_id}, function(res){
+    $.post('/ads/on_shelf', {ads_id : ads_id}, function(res){
         res = $.parseJSON(res);
         if (res.code != 0) {
             alert(res.msg);
@@ -458,14 +453,14 @@ function on_shelf(goods_id)
     });
 }
 
-function sold(goods_id){
+function sold(ads_id){
 	
 	
     if (!confirm('Confirm the item has been sold?')) {
     	alert("Cancel");
         return;
     }
-    $.post('/goods/sold', {goods_id : goods_id}, function(res){
+    $.post('/ads/sold', {ads_id : ads_id}, function(res){
         res = $.parseJSON(res);
         if (res.code != 0) {
             alert(res.msg);

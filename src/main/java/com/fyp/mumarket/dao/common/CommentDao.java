@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import com.fyp.mumarket.entity.common.Comment;
-import com.fyp.mumarket.entity.common.Goods;
+import com.fyp.mumarket.entity.common.Ads;
 import com.fyp.mumarket.entity.common.Student;
 @Repository
 public interface CommentDao extends JpaRepository<Comment, Long>,JpaSpecificationExecutor<Comment> {
@@ -26,10 +26,10 @@ public interface CommentDao extends JpaRepository<Comment, Long>,JpaSpecificatio
 	
 	/**
 	 * search by item
-	 * @param goods
+	 * @param ads
 	 * @return
 	 */
-	List<Comment> findByGoods(Goods goods);
+	List<Comment> findByAds(Ads ads);
 	
 	/**
 	 * Search by student id and item id
@@ -37,8 +37,8 @@ public interface CommentDao extends JpaRepository<Comment, Long>,JpaSpecificatio
 	 * @param userId
 	 * @return
 	 */
-	@Query("select c from Comment c where c.goods.id = :goodsId and c.student.id = :studentId")
-	Comment find(@Param("goodsId")Long goodsId,@Param("studentId")Long studentId);
+	@Query("select c from Comment c where c.ads.id = :adsId and c.student.id = :studentId")
+	Comment find(@Param("adsId")Long adsId,@Param("studentId")Long studentId);
 	
 	
 }

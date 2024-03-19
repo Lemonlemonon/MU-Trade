@@ -288,7 +288,7 @@
         </div>
         <div class="form-wr">
             <div class="form-must-wr">
-                <div class="form-item l goods-title">
+                <div class="form-item l ads-title">
                     <div class="form-key"><span>商品名称</span></div>
                     <div class="form-value">
                         <div class="form-input-wr">
@@ -296,7 +296,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-item xl goods-desc">
+                <div class="form-item xl ads-desc">
                     <div class="form-key"><span>商品详情</span></div>
                     <div class="form-value">
                         <div class="form-input-wr">
@@ -304,7 +304,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-item l goods-title">
+                <div class="form-item l ads-title">
                     <div class="form-key"><span>交易地点</span></div>
                     <div class="form-value">
                         <div class="form-input-wr">
@@ -312,7 +312,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-item m goods-price">
+                <div class="form-item m ads-price">
                     <div class="form-key"><span>价格</span></div>
                     <div class="form-value">
                         <div class="form-input-wr">
@@ -320,7 +320,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-item m goods-cat">
+                <div class="form-item m ads-cat">
                     <div class="form-key"><span>分类</span></div>
                     <div class="form-value">
                         <div class="form-input-wr"><span>请选择</span>
@@ -403,7 +403,7 @@
                                                                                                                                                     </ul>
                     </div>
                 </div>
-                <div class="form-item m goods-discount">
+                <div class="form-item m ads-discount">
                     <div class="form-key"><span>讲价</span></div>
                     <div class="form-value">
                         <div class="form-input-wr">

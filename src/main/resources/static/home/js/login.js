@@ -170,7 +170,6 @@ $(document).ready(function() {
 	
 	
 	$('#reg_button').click(function() {
-		var sqq = /^[1-9]{1}[0-9]{4,9}$/;
 		regusersn=/^\d{1,}$/;
 		if ($('#user-sn').val().length<1 || regusersn.test($('#user-sn').val()) == false) {
 			$('#user-sn').focus().css({

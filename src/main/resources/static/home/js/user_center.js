@@ -61,17 +61,17 @@ function inituserpros(uid){
 }
 
 function offshelf(id){
-    if (!confirm('Your Goods will be withdraw, are you sure?')) {
+    if (!confirm('Your Ads will be withdraw, are you sure?')) {
         return;
     }
     ajaxRequest('update_status','post',{"id" : id,"status":2},function(){
-    	alert("Goods is withdraw now!");
+    	alert("Ads is withdraw now!");
         location.reload();
 	});
 }
 function onshelf(id){
     ajaxRequest('update_status','post',{"id" : id,"status":1},function(){
-    	alert("Your Goods is Active now!");
+    	alert("Your Ads is Active now!");
         location.reload();
 	});
 }
@@ -79,7 +79,7 @@ function refresh(id,flag){
     
 	ajaxRequest('update_flag','post',{"id" : id,"flag":flag},function(){
 			if(flag == 1){
-				alert("Your Goods is Flaged now!");
+				alert("Your Ads is Flaged now!");
 			}else{
 				alert("You have disabled the Flag");
 			}
@@ -89,11 +89,11 @@ function refresh(id,flag){
 
 
 function sellout(id){
-    if (!confirm('Confirm the goods is sold?')) {
+    if (!confirm('Confirm the ads is sold?')) {
         return;
     }
     ajaxRequest('update_status','post',{"id" : id,"status":3},function(){
-    	alert("Congratulation! You have sold you goods!");
+    	alert("Congratulation! You have sold you ads!");
         location.reload();
 	});
 }

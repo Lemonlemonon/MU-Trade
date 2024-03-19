@@ -67,7 +67,7 @@ li.catg .sub-nav a:hover { color: rgb(255, 198, 0); }
 .catg .nav-icons { float: left; height: 60px; width: 26px; margin-left: 12px; text-align: center; }
 .catg .nav-icons {  }
 .nav-icons img { vertical-align: middle; }
-.catg h3 { float: right; width: 60px; height: 100%; margin-right: 9px; text-align: left; overflow: hidden; font-size: 14px; }
+.catg h3 { float: right; width: 95px; height: 100%; margin-right: 9px; text-align: left; overflow: hidden; font-size: 14px; }
 .area .switch:hover { color: rgb(237, 78, 81); border-bottom-color: rgb(237, 78, 81); }
 li.catg:hover a, li.area:hover > div { box-shadow: 0px 0px 7px rgba(0, 120, 139) inset; }
 aside { width: 140px; position: absolute; top: 170px; right: 20px; }
@@ -178,21 +178,21 @@ div.init-up:hover .up-bg { transition: all 0.3s ease 0s; transform: rotate(-180d
 .m .form-value { width: 26.1%; }
 .form-input-wr, .form-input-l-wr { border: 1px solid rgb(208, 224, 226); background-color: rgb(246, 249, 249); border-radius: 7px; padding: 5px 7px; overflow: hidden; position: relative; }
 .form-value-l { margin-left: 10px; }
-.goods-cat .form-value, .goods-place .form-value { position: relative; }
-.goods-cat .form-input-wr, .goods-cat .form-input-l-wr, .goods-place .form-input-wr { color: rgb(133, 142, 143); font-size: 1.17em; text-align: center; line-height: 30px; vertical-align: middle; cursor: pointer; }
-.goods-cat .form-input-wr span, .form-input-l-wr span, .goods-place .form-input-wr span { cursor: pointer; }
-.goods-cat .select, .goods-place .select { display: none; width: 100%; position: absolute; left: 0px; top: 0px; padding: 20px 0px 0px; border: 1px solid rgb(208, 224, 226); background-color: rgb(255, 255, 255); border-radius: 6px; list-style: outside none none; }
-.goods-cat .select { z-index: 100; }
+.ads-cat .form-value, .ads-place .form-value { position: relative; }
+.ads-cat .form-input-wr, .ads-cat .form-input-l-wr, .ads-place .form-input-wr { color: rgb(133, 142, 143); font-size: 1.17em; text-align: center; line-height: 30px; vertical-align: middle; cursor: pointer; }
+.ads-cat .form-input-wr span, .form-input-l-wr span, .ads-place .form-input-wr span { cursor: pointer; }
+.ads-cat .select, .ads-place .select { display: none; width: 100%; position: absolute; left: 0px; top: 0px; padding: 20px 0px 0px; border: 1px solid rgb(208, 224, 226); background-color: rgb(255, 255, 255); border-radius: 6px; list-style: outside none none; }
+.ads-cat .select { z-index: 100; }
 .select li { margin-bottom: 20px; color: rgb(102, 102, 102); font-size: 1.17em; text-align: center; cursor: pointer; }
 .select li span { position: relative; cursor: pointer; }
 .select li:hover span { color: rgb(50, 195, 165); }
 .select li:hover span::before { content: ""; display: inline-block; width: 8px; height: 8px; position: absolute; left: -15px; top: 50%; margin-top: -4px; border-radius: 100%; background-color: rgb(50, 195, 165); }
 .form-input-wr input { width: 100%; height: 28px; color: rgb(68, 68, 68); font-size: 1.17em; line-height: 28px; vertical-align: middle; background-color: transparent; }
 .form-input-wr textarea { color: rgb(68, 68, 68); }
-.goods-price .form-input-wr::before { content: "€"; text-align: center; display: block; width: 30px; height: 40px; position: absolute; left: 0px; float: left; color: rgb(133, 142, 143); font-size: 1.33em; line-height: 40px; vertical-align: middle; top: 0px; }
-.goods-price .form-input-wr { padding-left: 30px; position: relative; }
-.goods-discount .form-input-wr span { float: left; width: 49%; color: rgb(133, 142, 143); font-size: 1.17em; text-align: center; line-height: 28px; vertical-align: middle; cursor: pointer; }
-.goods-discount .form-input-wr span.sel { color: rgb(0, 120, 139); }
+.ads-price .form-input-wr::before { content: "€"; text-align: center; display: block; width: 30px; height: 40px; position: absolute; left: 0px; float: left; color: rgb(133, 142, 143); font-size: 1.33em; line-height: 40px; vertical-align: middle; top: 0px; }
+.ads-price .form-input-wr { padding-left: 30px; position: relative; }
+.ads-discount .form-input-wr span { float: left; width: 49%; color: rgb(133, 142, 143); font-size: 1.17em; text-align: center; line-height: 28px; vertical-align: middle; cursor: pointer; }
+.ads-discount .form-input-wr span.sel { color: rgb(0, 120, 139); }
 #desc { width: 100%; height: 138px; font-size: 1.17em; resize: none; background-color: transparent; }
 span.yes { border-right: 1px solid rgb(186, 200, 202); }
 .form-contact { display: block; height: auto; }

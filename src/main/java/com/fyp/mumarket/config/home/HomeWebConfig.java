@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import com.fyp.mumarket.constant.RuntimeConstant;
+import com.fyp.mumarket.interceptor.constant.RuntimeConstant;
 import com.fyp.mumarket.interceptor.home.HomeGlobalInterceptor;
 import com.fyp.mumarket.interceptor.home.HomeLoginInterceptor;
 @Configuration

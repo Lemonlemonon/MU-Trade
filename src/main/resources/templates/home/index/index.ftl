@@ -32,18 +32,18 @@
             <ul class="items clearfix">
             
             	<#if pageBean.content??>
-            	<#list pageBean.content as goods>
+            	<#list pageBean.content as ads>
             	<li class="item">
-                    <a href="../goods/detail?id=${goods.id}" class="img" target="_top">
-                    	<img src="/photo/view?filename=${goods.photo}" alt="${goods.name}"></a>
+                    <a href="../ads/detail?id=${ads.id}" class="img" target="_top">
+                    	<img src="/photo/view?filename=${ads.photo}" alt="${ads.name}"></a>
                     <div class="info">
-                        <div class="price">${goods.sellPrice}</div>
+                        <div class="price">${ads.sellPrice}</div>
                         <div class="name">
-                            <a href="../goods/detail?id=${goods.id}" target="_top">${goods.name}</a>
+                            <a href="../ads/detail?id=${ads.id}" target="_top">${ads.name}</a>
                         </div>
-                        <div class="department"><span>${goods.student.academy}</span></div>
-                        <div class="place"><span>${goods.student.school}</span></div>
-                        <#if goods.recommend == 1>
+                        <div class="department"><span>${ads.student.academy}</span></div>
+                        <div class="place"><span>${ads.student.school}</span></div>
+                        <#if ads.recommend == 1>
                         <div class="school"><span>Recommendation</span></div>
                         </#if>
                      </div>

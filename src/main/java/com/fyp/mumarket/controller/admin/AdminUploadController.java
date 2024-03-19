@@ -40,7 +40,7 @@ public class AdminUploadController {
     private Logger log = LoggerFactory.getLogger(AdminUploadController.class);
 
     /**
-     * Unified image upload class
+     * image upload class
      *
      * @param photo
      * @return
@@ -66,13 +66,13 @@ public class AdminUploadController {
         String uploadPhotoPath = PathUtil.newInstance().getUploadPhotoPath();
         File filePath = new File(uploadPhotoPath);
         if (!filePath.exists()) {
-            //If file path doesn't exist, create it
+            //If file path doesn't exist, create one
             filePath.mkdir();
         }
         filePath = new File(uploadPhotoPath + "/" + StringUtil.getFormatterDate(new Date(), "yyyyMMdd"));
-        //Check if the folder for the current date exists; if not, create it.
+        //Check if the folder for the current date exists; if not, create one.
         if (!filePath.exists()) {
-            //If file path doesn't exist, create it
+            //If file path doesn't exist, create one
             filePath.mkdir();
         }
         String filename = StringUtil.getFormatterDate(new Date(), "yyyyMMdd") + "/" + System.currentTimeMillis() + suffix;

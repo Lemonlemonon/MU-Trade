@@ -173,7 +173,7 @@ div.comment .avatar::before, .post-comment .avatar::before { content: ""; displa
 div.comment .avatar, .post-comment .avatar { padding: 3px; }
 #user_ph { float: left; margin-right: 20px; width: 52px; height: 52px; vertical-align: middle; border-radius: 100%; }
 #user_cmt { float: right; width: 667px; }
-.concerned-goods { width: 260px; padding: 20px; margin-top: 20px; margin-left: 20px; background-color: rgb(255, 255, 255); }
+.concerned-ads { width: 260px; padding: 20px; margin-top: 20px; margin-left: 20px; background-color: rgb(255, 255, 255); }
 .detail-grade { height: 20px; margin-left: 12px; vertical-align: middle; }
 .ershou-detail li .value span { vertical-align: middle; }
 @media screen and (min-width: 1280px) {
@@ -181,14 +181,14 @@ div.comment .avatar, .post-comment .avatar { padding: 3px; }
 	.ershou-photos-wr { width: 560px; height: 560px; text-align: center; }
 	.ershou-info { margin-left: 560px; height: 560px; }
 	.comments { width: 545px; }
-	.concerned-goods { width: 300px; }
+	.concerned-ads { width: 300px; }
 }
-.jiathis_style_32x32 .jiathis_button_qzone .jtico_qzone { background: transparent url('../imgs/goods_share_1.png') no-repeat scroll 0px 0px; }
-.jiathis_style_32x32 .jiathis_button_tsina .jtico_tsina { background: transparent url('../imgs/goods_share_2.png') no-repeat scroll 0px 0px; }
-.jiathis_style_32x32 .jiathis_button_tqq .jtico_tqq { background: transparent url('../imgs/goods_share_3.png') no-repeat scroll 0px 0px; }
-.jiathis_style_32x32 .jiathis_button_weixin .jtico_weixin { background: transparent url('../imgs/goods_share_4.png') no-repeat scroll 0px 0px; }
-.jiathis_style_32x32 .jiathis_button_renren .jtico_renren { background: transparent url('../imgs/goods_share_5.png') no-repeat scroll 0px 0px; }
-#goods_button_more { background: transparent url('../imgs/goods_share_more.png') no-repeat scroll 0px 0px; }
+.jiathis_style_32x32 .jiathis_button_qzone .jtico_qzone { background: transparent url('../imgs/ads_share_1.png') no-repeat scroll 0px 0px; }
+.jiathis_style_32x32 .jiathis_button_tsina .jtico_tsina { background: transparent url('../imgs/ads_share_2.png') no-repeat scroll 0px 0px; }
+.jiathis_style_32x32 .jiathis_button_tqq .jtico_tqq { background: transparent url('../imgs/ads_share_3.png') no-repeat scroll 0px 0px; }
+.jiathis_style_32x32 .jiathis_button_weixin .jtico_weixin { background: transparent url('../imgs/ads_share_4.png') no-repeat scroll 0px 0px; }
+.jiathis_style_32x32 .jiathis_button_renren .jtico_renren { background: transparent url('../imgs/ads_share_5.png') no-repeat scroll 0px 0px; }
+#ads_button_more { background: transparent url('../imgs/ads_share_more.png') no-repeat scroll 0px 0px; }
 .ad-box { margin-left: -20px; position: relative; }
 .comment-right { float: right; }
 .want-commenting::before { background-color: rgb(254, 254, 254); }

@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.fyp.mumarket.bean.PageBean;
 import com.fyp.mumarket.bean.Result;
-import com.fyp.mumarket.entity.common.Goods;
-import com.fyp.mumarket.entity.common.ReportGoods;
+import com.fyp.mumarket.entity.common.Ads;
+import com.fyp.mumarket.entity.common.ReportAds;
 import com.fyp.mumarket.entity.common.Student;
-import com.fyp.mumarket.service.common.GoodsService;
-import com.fyp.mumarket.service.common.ReportGoodsService;
+import com.fyp.mumarket.service.common.AdsService;
+import com.fyp.mumarket.service.common.ReportAdsService;
 import com.fyp.mumarket.service.common.StudentService;
 
 /**
@@ -26,11 +26,11 @@ import com.fyp.mumarket.service.common.StudentService;
 public class ReportController {
 
 	@Autowired
-	private GoodsService goodsService;
+	private AdsService adsService;
 	@Autowired
 	private StudentService studentService;
 	@Autowired
-	private ReportGoodsService reportGoodsService;
+	private ReportAdsService reportAdsService;
 	
 	/**
 	 * Controller for report management page
@@ -40,22 +40,22 @@ public class ReportController {
 	 * @return
 	 */
 	@RequestMapping(value="/list")
-	public String list(ReportGoods reportGoods,PageBean<ReportGoods> pageBean,Model model){
-		if(reportGoods.getStudent() != null && reportGoods.getStudent().getSn() != null){
-			Student student = studentService.findBySn(reportGoods.getStudent().getSn());
+	public String list(ReportAds reportAds,PageBean<ReportAds> pageBean,Model model){
+		if(reportAds.getStudent() != null && reportAds.getStudent().getSn() != null){
+			Student student = studentService.findBySn(reportAds.getStudent().getSn());
 			if(student != null){
-				reportGoods.setStudent(student);
+				reportAds.setStudent(student);
 			}
 		}
-		List<Goods> goodsList = null;
-		if(reportGoods.getGoods() != null && reportGoods.getGoods().getName() != null){
-			goodsList = goodsService.findListByName(reportGoods.getGoods().getName());
+		List<Ads> adsList = null;
+		if(reportAds.getAds() != null && reportAds.getAds().getName() != null){
+			adsList = adsService.findListByName(reportAds.getAds().getName());
 		}
 		model.addAttribute("title", "Reportlist");
-		model.addAttribute("content", reportGoods.getContent());
-		model.addAttribute("name", reportGoods.getGoods() == null ? null : reportGoods.getGoods().getName());
-		model.addAttribute("sn", reportGoods.getStudent() == null ? null : reportGoods.getStudent().getSn());
-		model.addAttribute("pageBean", reportGoodsService.findlist(pageBean, reportGoods,goodsList));
+		model.addAttribute("content", reportAds.getContent());
+		model.addAttribute("name", reportAds.getAds() == null ? null : reportAds.getAds().getName());
+		model.addAttribute("sn", reportAds.getStudent() == null ? null : reportAds.getStudent().getSn());
+		model.addAttribute("pageBean", reportAdsService.findlist(pageBean, reportAds,adsList));
 		return "admin/report/list";
 	}
 	
@@ -70,7 +70,7 @@ public class ReportController {
 	@RequestMapping(value="/delete",method=RequestMethod.POST)
 	@ResponseBody
 	public Result<Boolean> delete(@RequestParam(name="id",required=true)Long id){
-		reportGoodsService.delete(id);
+		reportAdsService.delete(id);
 		return Result.success(true);
 	}
 }

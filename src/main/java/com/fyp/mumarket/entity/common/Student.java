@@ -41,23 +41,23 @@ public class Student extends BaseEntity{
 	
 	@ValidateEntity(required=false)
 	@Column(name="nickname",length=32)
-	private String nickname;//Nickname
+	private String nickname = "MU-student";//Nickname
 	
 	@ValidateEntity(required=false)
 	@Column(name="mobile",length=18)
-	private String mobile;//Mobile number
+	private String mobile=" ";//Mobile number
 	
 	@ValidateEntity(required=false)
 	@Column(name="school",length=18)
-	private String school;//school belong to
+	private String school=" ";//school belong to
 	
 	@ValidateEntity(required=false)
 	@Column(name="academy",length=18)
-	private String academy;//academy belong to
+	private String academy = "Maynooth";//academy belong to
 	
 	@ValidateEntity(required=false)
 	@Column(name="grade",length=18)
-	private String grade;//Year belong to
+	private String grade=" ";//Year belong to
 	
 	@ValidateEntity(required=false)
 	@Column(name="status",length=1)

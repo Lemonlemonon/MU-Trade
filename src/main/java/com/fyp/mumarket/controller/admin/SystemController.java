@@ -19,12 +19,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.fyp.mumarket.bean.CodeMsg;
 import com.fyp.mumarket.bean.PageBean;
 import com.fyp.mumarket.bean.Result;
-import com.fyp.mumarket.constant.SessionConstant;
 import com.fyp.mumarket.entity.admin.OperaterLog;
 import com.fyp.mumarket.entity.admin.Role;
 import com.fyp.mumarket.entity.admin.User;
+import com.fyp.mumarket.interceptor.constant.SessionConstant;
 import com.fyp.mumarket.listener.SessionListener;
-import com.fyp.mumarket.service.admin.DatabaseBakService;
+import com.fyp.mumarket.service.admin.DbBackupService;
 import com.fyp.mumarket.service.admin.OperaterLogService;
 import com.fyp.mumarket.service.admin.UserService;
 import com.fyp.mumarket.util.SessionUtil;
@@ -49,7 +49,7 @@ public class SystemController {
 	private UserService userService;
 	
 	@Autowired
-	private DatabaseBakService databaseBakService;
+	private DbBackupService dbBackupService;
 	
 	private Logger log = LoggerFactory.getLogger(SystemController.class);
 	
@@ -137,7 +137,7 @@ public class SystemController {
 		model.addAttribute("operatorLogs", operaterLogService.findLastestLog(10));
 		model.addAttribute("userTotal", userService.total());
 		model.addAttribute("operatorLogTotal", operaterLogService.total());
-		model.addAttribute("databaseBackupTotal", databaseBakService.total());
+		model.addAttribute("databaseBackupTotal", dbBackupService.total());
 		model.addAttribute("onlineUserTotal", SessionListener.onlineUserCount);
 		return "admin/system/index";
 	}

@@ -10,11 +10,11 @@ import org.springframework.stereotype.Service;
 
 import com.fyp.mumarket.bean.CodeMsg;
 import com.fyp.mumarket.bean.Result;
-import com.fyp.mumarket.dao.common.GoodsBiddingDao;
-import com.fyp.mumarket.dao.common.GoodsDao;
+import com.fyp.mumarket.dao.common.AdsBiddingDao;
+import com.fyp.mumarket.dao.common.AdsDao;
 import com.fyp.mumarket.dao.common.UsersBiddingDao;
-import com.fyp.mumarket.entity.common.Goods;
-import com.fyp.mumarket.entity.common.GoodsBidding;
+import com.fyp.mumarket.entity.common.Ads;
+import com.fyp.mumarket.entity.common.AdsBidding;
 import com.fyp.mumarket.entity.common.UserBidding;
 
 /**
@@ -28,24 +28,24 @@ public class UsersBiddingService {
 	@Autowired
 	private UsersBiddingDao usersBiddingDao;
   @Autowired
-  private GoodsBiddingDao goodsBiddingDao;
+  private AdsBiddingDao adsBiddingDao;
   @Autowired
-  private GoodsDao goodsDao;
+  private AdsDao adsDao;
 
   public Result<?> createBidding(UserBidding userBidding) {
-    Optional<GoodsBidding> biddingOptional = goodsBiddingDao.findById(userBidding.getBiddingId());
+    Optional<AdsBidding> biddingOptional = adsBiddingDao.findById(userBidding.getBiddingId());
     if (biddingOptional.isPresent()) {
-      GoodsBidding goodsBidding = biddingOptional.get();
-      if (goodsBidding.getStatus() != 0) {
+      AdsBidding adsBidding = biddingOptional.get();
+      if (adsBidding.getStatus() != 0) {
         return Result.error(new CodeMsg(400, "Sorry, this Ads has stopped bidding!"));
       }
     }
 
 
-    Optional<Goods> optionalGoods = goodsDao.findByGoodsBiddingId(userBidding.getBiddingId());
-    if (optionalGoods.isPresent()) {
-      Goods goods = optionalGoods.get();
-      if (goods.getStudent().getId().equals(userBidding.getUserId())) {
+    Optional<Ads> optionalAds = adsDao.findByAdsBiddingId(userBidding.getBiddingId());
+    if (optionalAds.isPresent()) {
+      Ads ads = optionalAds.get();
+      if (ads.getStudent().getId().equals(userBidding.getUserId())) {
         return Result.error(new CodeMsg(400, "Sorry, you can not bid on your Ads!"));
       }
     }

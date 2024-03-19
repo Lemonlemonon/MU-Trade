@@ -6,8 +6,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import com.fyp.mumarket.config.SiteConfig;
 import com.fyp.mumarket.entity.common.SiteSetting;
-import com.fyp.mumarket.service.common.FriendLinkService;
-import com.fyp.mumarket.service.common.GoodsCategoryService;
+import com.fyp.mumarket.service.common.RelatedSiteService;
+import com.fyp.mumarket.service.common.AdsCategoryService;
 import com.fyp.mumarket.service.common.SiteSettingService;
 import com.fyp.mumarket.util.StringUtil;
 
@@ -16,11 +16,11 @@ import com.fyp.mumarket.util.StringUtil;
 public class HomeGlobalInterceptor implements HandlerInterceptor{
 
 	@Autowired
-	private GoodsCategoryService goodsCategoryService;
+	private AdsCategoryService adsCategoryService;
 	@Autowired
 	private SiteConfig siteConfig;
 	@Autowired
-	private FriendLinkService friendLinkService;
+	private RelatedSiteService relatedSiteService;
 	@Autowired
 	private SiteSettingService siteSettingService;
 	@Override
@@ -28,8 +28,8 @@ public class HomeGlobalInterceptor implements HandlerInterceptor{
 		
 		if(!StringUtil.isAjax(request)){
 			//If it's not an AJAX request, then place the menu information into the page template variable
-			request.setAttribute("goodsCategorys", goodsCategoryService.findAll());
-			request.setAttribute("friendLinkList", friendLinkService.findList(8));
+			request.setAttribute("adsCategorys", adsCategoryService.findAll());
+			request.setAttribute("relatedSiteList", relatedSiteService.findList(8));
 			SiteSetting siteSetting = siteSettingService.find();
 			if(siteSetting != null){
 				request.setAttribute("siteName", siteSetting.getSiteName());

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-<title>${siteName!""}-Publish Goods</title>
+<title>${siteName!""}-Publish Ads</title>
 <link rel="icon" href="/home/imgs/favicon.ico" type="image/x-icon">
 <link media="all" href="/home/css/release_product.css" type="text/css" rel="stylesheet">
 <link media="all" href="/home/css/index.css" type="text/css" rel="stylesheet">
@@ -13,14 +13,14 @@
             <div class="main center">
                 <img class="release-icon-main" src="/home/imgs/release-icon.png" alt="">
                 <div class="wave-fluid"></div>
-                <div class="release-title">Publish Goods</div>
+                <div class="release-title">Publish Ads</div>
                 <form action="publish" id="publish-form" method="post">
                 <div class="form-wr">
                     <div class="form-must-wr">
                     	
                     	<input id="photo" type="hidden" name="photo" value="" class="required" tips="Please upload images!">
                     	
-                    	<div id="show-img" class="form-item l goods-title" style="height:100px;display:none;">
+                    	<div id="show-img" class="form-item l ads-title" style="height:100px;display:none;">
                             <div class="form-key">
                                 <span>Image uploaded</span></div>
                             <div class="form-value">
@@ -30,7 +30,7 @@
                             </div>
                         </div>
                     	
-                    	<div class="form-item l goods-title">
+                    	<div class="form-item l ads-title">
                             <div class="form-key">
                                 <span>Upload images</span></div>
                             <div class="form-value">
@@ -40,27 +40,27 @@
                             </div>
                         </div>
                     	
-                        <div class="form-item l goods-title">
+                        <div class="form-item l ads-title">
                             <div class="form-key">
-                                <span>Goods title</span></div>
+                                <span>Ads title</span></div>
                             <div class="form-value">
                                 <div class="form-input-wr">
-                                    <input id="name" name="name" placeholder="32 charaters max" maxlength="32" value="" type="text" class="required" tips="Please enter Goods title"></div>
+                                    <input id="name" name="name" placeholder="32 charaters max" maxlength="32" value="" type="text" class="required" tips="Please enter Ads title"></div>
                             </div>
                         </div>
                         
-                        <div class="form-item xl goods-desc">
+                        <div class="form-item xl ads-desc">
                             <div class="form-key">
-                                <span>Goods detail</span></div>
+                                <span>Ads detail</span></div>
                             <div class="form-value">
                                 <div class="form-input-wr">
-                                    <textarea name="content" id="desc" placeholder="Description, condition, selling reason, etc." class="required" tips="Please enter Goods detail "></textarea>
+                                    <textarea name="content" id="desc" placeholder="Description, condition, selling reason, etc." class="required" tips="Please enter Ads detail "></textarea>
                                 </div>
                             </div>
                         </div>
                         
                         
-                        <div class="form-item l goods-price">
+                        <div class="form-item l ads-price">
                             <div class="form-key">
                                 <span>Original price</span></div>
                             <div class="form-value">
@@ -68,7 +68,7 @@
                                     <input class="price required" id="buyPrice" name="buyPrice" value="" type="number" tips="Please enter original price"></div>
                             </div>
                         </div>
-                        <div class="form-item l goods-price">
+                        <div class="form-item l ads-price">
                             <div class="form-key">
                                 <span>Price now</span></div>
                             <div class="form-value">
@@ -80,7 +80,7 @@
                           
 
                         <!--Category info -->
-                        <div class="form-item l goods-cat">
+                        <div class="form-item l ads-cat">
                             <div class="form-key">
                                 <span>Category</span>
                             </div>
@@ -88,21 +88,21 @@
                                 <div class="form-input-wr">
 								    <select id="cid" style="width: 40%;height: 28px;color: rgb(68, 68, 68);font-size: 1.17em;line-height: 28px;background-color: transparent;"> 
 										<option>---Main category----</option> 
-										<#if goodsCategorys??>
-										<#list goodsCategorys as goodsCategory>
-											<#if goodsCategory.parent??>
+										<#if adsCategorys??>
+										<#list adsCategorys as adsCategory>
+											<#if adsCategory.parent??>
 											<#else>
-											<option value="${goodsCategory.id}">${goodsCategory.name}</option> 
+											<option value="${adsCategory.id}">${adsCategory.name}</option> 
 											</#if>
 										</#list>
 										</#if>
 								   </select> 
-								   <select id="cid2" name="goodsCategory.id" style="width: 40%;height: 28px;color: rgb(68, 68, 68);font-size: 1.17em;line-height: 28px;background-color: transparent;"> 
+								   <select id="cid2" name="adsCategory.id" style="width: 40%;height: 28px;color: rgb(68, 68, 68);font-size: 1.17em;line-height: 28px;background-color: transparent;"> 
 								   		<option value="-1">----Sub-category----</option>
-								   		<#if goodsCategorys??>
-										<#list goodsCategorys as goodsCategory>
-								   		<#if goodsCategory.parent??>
-										<option style="display:none;" value="${goodsCategory.id}" pid="${goodsCategory.parent.id}">${goodsCategory.name}</option> 
+								   		<#if adsCategorys??>
+										<#list adsCategorys as adsCategory>
+								   		<#if adsCategory.parent??>
+										<option style="display:none;" value="${adsCategory.id}" pid="${adsCategory.parent.id}">${adsCategory.name}</option> 
 										</#if>
 										</#list>
 										</#if>
@@ -148,7 +148,7 @@ $(document).ready(function(){
    		});
    		if(flag){
    			if($("#desc").val().length < 15){
-	   			alert('Goods detail can not be less than 15 charaters!');
+	   			alert('Ads detail can not be less than 15 charaters!');
 	   			return;
 	   		}
 	   		if(parseFloat($("#buyPrice").val()) == 'NaN'){

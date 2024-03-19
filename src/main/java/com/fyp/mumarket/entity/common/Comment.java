@@ -32,8 +32,8 @@ public class Comment extends BaseEntity{
 	private Student student;//Comment student
 	
 	@ManyToOne
-	@JoinColumn(name="goods_id")
-	private Goods goods;//Comment item
+	@JoinColumn(name="ads_id")
+	private Ads ads;//Comment item
 	
 	@ValidateEntity(required=true,requiredLeng=true,minLength=1,maxLength=1000,errorRequiredMsg="Comment can not be empty",errorMinLengthMsg="Length not enough!",errorMaxLengthMsg="length can not be greater than 10000!")
 	@Column(name="content",nullable=false,length=1024)
@@ -53,12 +53,12 @@ public class Comment extends BaseEntity{
 		this.student = student;
 	}
 
-	public Goods getGoods() {
-		return goods;
+	public Ads getAds() {
+		return ads;
 	}
 
-	public void setGoods(Goods goods) {
-		this.goods = goods;
+	public void setAds(Ads ads) {
+		this.ads = ads;
 	}
 
 	public String getContent() {
@@ -79,7 +79,7 @@ public class Comment extends BaseEntity{
 
 	@Override
 	public String toString() {
-		return "Comment [student=" + student + ", goods=" + goods
+		return "Comment [student=" + student + ", ads=" + ads
 				+ ", content=" + content + ", replyTo=" + replyTo + "]";
 	}
 

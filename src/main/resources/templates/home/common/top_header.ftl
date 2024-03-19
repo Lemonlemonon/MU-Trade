@@ -192,12 +192,12 @@
 
 	            <div class="search-hots center ease2">
 	                <span>Trending: </span>
-	                <#list goodsCategorys as hotGoodsCategory>
-			        <#if hotGoodsCategory.parent??>
+	                <#list adsCategorys as hotAdsCategory>
+			        <#if hotAdsCategory.parent??>
 			        <#else>
-	                <a class="hots" href="/home/goods/list?cid=${hotGoodsCategory.id}" target="_top">${hotGoodsCategory.name}</a>
+	                <a class="hots" href="/home/ads/list?cid=${hotAdsCategory.id}" target="_top">${hotAdsCategory.name}</a>
 	                </#if>
-	                <#if hotGoodsCategory_index == 20>
+	                <#if hotAdsCategory_index == 20>
 	                <#break>
     				</#if>
 	                </#list>

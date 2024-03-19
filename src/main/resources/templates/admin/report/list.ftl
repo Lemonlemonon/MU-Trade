@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, goodsCategory-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, adsCategory-scalable=no" />
 <title>${siteName!""}|Report management-${title!""}</title>
 <#include "../common/header.ftl"/>
 <style>
@@ -44,15 +44,15 @@ td{
                   <div class="input-group">
                     <div class="input-group-btn">
                       <button class="btn btn-default dropdown-toggle" id="search-btn" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
-                      	<#if name??>Goods name<#elseif sn??>Student ID<#elseif content??>Reason<#else>Filter</#if> <span class="caret"></span>
+                      	<#if name??>Ads name<#elseif sn??>Student ID<#elseif content??>Reason<#else>Filter</#if> <span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu">
                         <li> <a tabindex="-1" href="javascript:void(0)" data-field="content">Reason</a> </li>
                         <li> <a tabindex="-1" href="javascript:void(0)" data-field="student.sn">Student ID</a> </li>
-                        <li> <a tabindex="-1" href="javascript:void(0)" data-field="goods.name">Goods name</a> </li>
+                        <li> <a tabindex="-1" href="javascript:void(0)" data-field="ads.name">Ads name</a> </li>
                       </ul>
                     </div>
-                    <input type="text" class="form-control" value="${content!sn!name!""}" id="search-value" name="<#if name??>goods.name<#elseif sn??>student.sn<#else>content</#if>" placeholder="Search..">
+                    <input type="text" class="form-control" value="${content!sn!name!""}" id="search-value" name="<#if name??>ads.name<#elseif sn??>student.sn<#else>content</#if>" placeholder="Search..">
                   	<span class="input-group-btn">
                       <button class="btn btn-primary" type="submit">Search</button>
                     </span>
@@ -72,7 +72,7 @@ td{
                           </label>
                         </th>
                         <th>Item image</th>
-                        <th>Goods name</th>
+                        <th>Ads name</th>
                         <th>Reporter(student ID)</th>
                         <th style="width:256px;">Reason</th>
                         <th>Time</th>
@@ -80,28 +80,28 @@ td{
                     </thead>
                     <tbody>
                       <#if pageBean.content?size gt 0>
-                      <#list pageBean.content as reportGoods>
+                      <#list pageBean.content as reportAds>
                       <tr>
                         <td style="vertical-align:middle;">
                           <label class="lyear-checkbox checkbox-primary">
-                            <input type="checkbox" name="ids[]" value="${reportGoods.id}"><span></span>
+                            <input type="checkbox" name="ids[]" value="${reportAds.id}"><span></span>
                           </label>
                         </td>
                         <td style="vertical-align:middle;">
-                        	<a href="/home/goods/detail?id=${reportGoods.goods.id}" target="_blank">
-                        	<img src="/photo/view?filename=${reportGoods.goods.photo}" width="30px" height="30px">
+                        	<a href="/home/ads/detail?id=${reportAds.ads.id}" target="_blank">
+                        	<img src="/photo/view?filename=${reportAds.ads.photo}" width="30px" height="30px">
                        		</a>
                         </td>
                         <td style="vertical-align:middle;">
-                        	<a href="/home/goods/detail?id=${reportGoods.goods.id}" target="_blank">${reportGoods.goods.name}</a>
+                        	<a href="/home/ads/detail?id=${reportAds.ads.id}" target="_blank">${reportAds.ads.name}</a>
                         </td>
                         <td style="vertical-align:middle;">
-                        	${reportGoods.student.sn}
+                        	${reportAds.student.sn}
                         </td>
                         <td style="vertical-align:middle;">
-                        ${reportGoods.content}
+                        ${reportAds.content}
                         </td>
-                        <td style="vertical-align:middle;" style="vertical-align:middle;"><font class="text-success">${reportGoods.createTime}</font></td>
+                        <td style="vertical-align:middle;" style="vertical-align:middle;"><font class="text-success">${reportAds.createTime}</font></td>
                       </tr>
                     </#list>
                     <#else>
@@ -115,19 +115,19 @@ td{
                   <#if pageBean.currentPage == 1>
                   <li class="disabled"><span>«</span></li>
                   <#else>
-                  <li><a href="list?<#if name??>goods.name<#elseif sn??>student.sn<#else>content</#if>=${name!sn!content!""}&currentPage=1">«</a></li>
+                  <li><a href="list?<#if name??>ads.name<#elseif sn??>student.sn<#else>content</#if>=${name!sn!content!""}&currentPage=1">«</a></li>
                   </#if>
                   <#list pageBean.currentShowPage as showPage>
                   <#if pageBean.currentPage == showPage>
                   <li class="active"><span>${showPage}</span></li>
                   <#else>
-                  <li><a href="list?<#if name??>goods.name<#elseif sn??>student.sn<#else>content</#if>=${name!sn!content!""}&currentPage=${showPage}">${showPage}</a></li>
+                  <li><a href="list?<#if name??>ads.name<#elseif sn??>student.sn<#else>content</#if>=${name!sn!content!""}&currentPage=${showPage}">${showPage}</a></li>
                   </#if>
                   </#list>
                   <#if pageBean.currentPage == pageBean.totalPage>
                   <li class="disabled"><span>»</span></li>
                   <#else>
-                  <li><a href="list?<#if name??>goods.name<#elseif sn??>student.sn<#else>content</#if>=${name!sn!content!""}&currentPage=${pageBean.totalPage}">»</a></li>
+                  <li><a href="list?<#if name??>ads.name<#elseif sn??>student.sn<#else>content</#if>=${name!sn!content!""}&currentPage=${pageBean.totalPage}">»</a></li>
                   </#if>
                   <li><span>In total ${pageBean.totalPage} pages,${pageBean.total} items</span></li>
                 </ul>

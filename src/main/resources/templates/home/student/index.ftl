@@ -43,12 +43,12 @@
         </div>
         
         <ul class="seller_attr">
-            <li>Total Goods: <span id="goodsTotal">45</span></li>
-            <li>Sold Goods: <span id = "soldGoodsTotal">4545</span></li>
-            <li>Active Goods: <span id = "upGoodsTotal">4545</span></li>
-            <li>Withdrawed Goods:<span id = "downGoodsTotal">4545</span></li>
-            <li>Requests: <span id = "userpoint">${wantedGoodsList?size}</span></li>
-            <li>Reported: <span id = "userpoint">${reportGoodsList?size}</span></li>
+            <li>Total Ads: <span id="adsTotal">45</span></li>
+            <li>Sold Ads: <span id = "soldAdsTotal">4545</span></li>
+            <li>Active Ads: <span id = "upAdsTotal">4545</span></li>
+            <li>Withdrawed Ads:<span id = "downAdsTotal">4545</span></li>
+            <li>Requests: <span id = "userpoint">${requestAdsList?size}</span></li>
+            <li>Reported: <span id = "userpoint">${reportAdsList?size}</span></li>
         </ul>
     </div>
     <div id="user_photo">
@@ -149,22 +149,22 @@
             </div>
         </div>
         <ul id="middle_nav" class="clearfix">
-   		<li class="on"><a href="">My active Goods</a></li>
+   		<li class="on"><a href="">My active Ads</a></li>
 		</ul>
         <div id="my_products">
               <div id="onsale_pro">
-                <#if goodsList??>
-                 <#list goodsList as goods>
+                <#if adsList??>
+                 <#list adsList as ads>
                  <div class="enshr_each" id="">  
 	                    <div class="enshr_info">
-	                        <h2><a href="../goods/detail?id=${goods.id}" title="${goods.name}">${goods.name}</a></h2>
-	                        <p style="overflow:hidden;">${goods.content}</p>
+	                        <h2><a href="../ads/detail?id=${ads.id}" title="${ads.name}">${ads.name}</a></h2>
+	                        <p style="overflow:hidden;">${ads.content}</p>
 	                        <div>
 	                        <span id="prostate">
 	                        	Status:
-	                        	<#if goods.status ==1>
+	                        	<#if ads.status ==1>
 	                        	<font style="color:rgb(75, 192, 165);">Active</font>
-	                        	<#elseif goods.status ==2>
+	                        	<#elseif ads.status ==2>
 	                        	<font style="color:red;">Withdrawed</font>
 	                        	<#else>
 	                        	<font style="color:#4BC00F;">Sold</font>
@@ -172,47 +172,47 @@
 	                        </span>|
 	                        <span id="prostate">
 	                        	If recommended:
-	                        	<#if goods.recommend ==1>
+	                        	<#if ads.recommend ==1>
 	                        	<font style="color:rgb(75, 192, 165);">Yes</font>
 	                        	<#else>
 	                        	<font style="color:red;">No</font>
 	                        	</#if>
 	                        </span>
-	                        &nbsp;&nbsp;<span id="prostate">Added time:${goods.updateTime}</span>
+	                        &nbsp;&nbsp;<span id="prostate">Added time:${ads.updateTime}</span>
 
                             </div>
                             <div class="enshr_stateBtn">
-	                            <#if goods.status == 1>
-	                            <span class="enshrine_it" onclick="sellout(${goods.id});">Confirm sold</span>
-	                            <#elseif goods.status == 3>
+	                            <#if ads.status == 1>
+	                            <span class="enshrine_it" onclick="sellout(${ads.id});">Confirm sold</span>
+	                            <#elseif ads.status == 3>
 	                            <span class="enshrine_it">Sold</span>
 	                            </#if>
-	                           	<#if goods.status == 1>
-	                            <span class="enshrine_it make_edition" onclick="offshelf(${goods.id});">Withdraw</span>
-	                            <#elseif goods.status == 2>
-	                            <span class="enshrine_it make_edition" onclick="onshelf(${goods.id});" style="margin-right:30px;">Active</span>
+	                           	<#if ads.status == 1>
+	                            <span class="enshrine_it make_edition" onclick="offshelf(${ads.id});">Withdraw</span>
+	                            <#elseif ads.status == 2>
+	                            <span class="enshrine_it make_edition" onclick="onshelf(${ads.id});" style="margin-right:30px;">Active</span>
 	                            </#if>
-	                            <#if goods.flag == 0>
-	                            <span class="enshrine_it make_edition" onclick="refresh(${goods.id},1);">Flag</span>
+	                            <#if ads.flag == 0>
+	                            <span class="enshrine_it make_edition" onclick="refresh(${ads.id},1);">Flag</span>
 	                            <#else>
-	                            <span class="enshrine_it make_edition" onclick="refresh(${goods.id},0);">Cancel flag</span>
+	                            <span class="enshrine_it make_edition" onclick="refresh(${ads.id},0);">Cancel flag</span>
 	                            </#if>
-	                            <a href="edit_goods?id=${goods.id}" target="_top">
+	                            <a href="edit_ads?id=${ads.id}" target="_top">
 	                                <span class="enshrine_it  make_edition">Edit</span>
 	                            </a>
 	                            
-                                <#if goods.goodsBiddingId??>
-                                <a href="javascript:void(0);" onclick="StopBiddingStopBidding(${goods.goodsBiddingId});">
+                                <#if ads.adsBiddingId??>
+                                <a href="javascript:void(0);" onclick="StopBiddingStopBidding(${ads.adsBiddingId});">
                                     <span class="enshrine_it  make_edition">End bid</span>
                                 </a>
-                                <a href="javascript:void(0);" onclick="AuctionReset(${goods.id});">
+                                <a href="javascript:void(0);" onclick="AuctionReset(${ads.id});">
                                     <span class="enshrine_it  make_edition">Reset bid</span>
                                 </a>
                                 </#if>
 	                        </div>
 	                    </div>
-	                    <a href="../goods/detail?id=${goods.id}">
-	                        <img class="enshr_ph" src="/photo/view?filename=${goods.photo}" alt="${goods.name}">
+	                    <a href="../ads/detail?id=${ads.id}">
+	                        <img class="enshr_ph" src="/photo/view?filename=${ads.photo}" alt="${ads.name}">
 	                    </a>
                 </div>
                 </#list>
@@ -224,28 +224,28 @@
 		</ul>
         <div id="my_products">
               <div id="onsale_pro">
-                <#if wantedGoodsList??>
-                 <#list wantedGoodsList as wantedGoods>
+                <#if requestAdsList??>
+                 <#list requestAdsList as requestAds>
                  <div class="enshr_each" id="">  
 	                    <div class="enshr_info">
-	                        <h2><a href="" title="${wantedGoods.name}">${wantedGoods.name}</a></h2>
-	                        <p style="overflow:hidden;">${wantedGoods.content}</p>
+	                        <h2><a href="" title="${requestAds.name}">${requestAds.name}</a></h2>
+	                        <p style="overflow:hidden;">${requestAds.content}</p>
 	                        <div class="enshr_state">
 	                        &nbsp;&nbsp;
-	                        <span id="prostate">Publish time: ${wantedGoods.updateTime}</span>
-                            <a href="javascript:void(0)" onClick="delWanted(${wantedGoods.id})" target="_top">
+	                        <span id="prostate">Publish time: ${requestAds.updateTime}</span>
+                            <a href="javascript:void(0)" onClick="delRequest(${requestAds.id})" target="_top">
                                 <span class="enshrine_it  make_edition" style="margin-right:30px;">Delete</span>
                             </a>
-                            <a href="edit_wanted_goods?id=${wantedGoods.id}" target="_top">
+                            <a href="edit_request_ads?id=${requestAds.id}" target="_top">
                                 <span class="enshrine_it  make_edition" style="margin-right:30px;">Edit</span>
                             </a>
 	                        </div>
 	                    </div>
 	                    <a href="">
-	                        <#if wantedGoods.student.headPic??>
-	                        <img class="enshr_ph" src="/photo/view?filename=${wantedGoods.student.headPic}" alt="${wantedGoods.name}">
+	                        <#if requestAds.student.headPic??>
+	                        <img class="enshr_ph" src="/photo/view?filename=${requestAds.student.headPic}" alt="${requestAds.name}">
 	                        <#else>
-	                        <img class="enshr_ph" src="/home/imgs/avatar1.png" alt="${wantedGoods.name}">
+	                        <img class="enshr_ph" src="/home/imgs/avatar1.png" alt="${requestAds.name}">
 	                        </#if>
 	                    </a>
                 </div>
@@ -258,22 +258,22 @@
 		</ul>
         <div id="my_products">
               <div id="onsale_pro">
-                <#if reportGoodsList??>
-                 <#list reportGoodsList as reportGoods>
+                <#if reportAdsList??>
+                 <#list reportAdsList as reportAds>
                  <div class="enshr_each" id="">  
 	                    <div class="enshr_info">
-	                        <h2><a href="../goods/detail?id=${reportGoods.goods.id}" title="${reportGoods.goods.name}">${reportGoods.goods.name}</a></h2>
-	                        <p style="overflow:hidden;">${reportGoods.goods.content}</p>
+	                        <h2><a href="../ads/detail?id=${reportAds.ads.id}" title="${reportAds.ads.name}">${reportAds.ads.name}</a></h2>
+	                        <p style="overflow:hidden;">${reportAds.ads.content}</p>
 	                        <div class="enshr_state">
-	                        &nbsp;&nbsp;<span id="prostate">Report time: ${reportGoods.createTime}</span>
-	                        &nbsp;&nbsp;<span id="prostate">Report reason: ${reportGoods.content}</span>
-                            <a href="javascript:void(0)" onClick="delReport(${reportGoods.id})" target="_top">
+	                        &nbsp;&nbsp;<span id="prostate">Report time: ${reportAds.createTime}</span>
+	                        &nbsp;&nbsp;<span id="prostate">Report reason: ${reportAds.content}</span>
+                            <a href="javascript:void(0)" onClick="delReport(${reportAds.id})" target="_top">
 	                            <span class="enshrine_it  make_edition" style="margin-right:30px;">Delete</span>
 	                        </a>
 	                        </div>
 	                    </div>
-	                    <a href="../goods/detail?id=${reportGoods.goods.id}">
-	                        <img class="enshr_ph" src="/photo/view?filename=${reportGoods.goods.photo}" alt="${reportGoods.goods.name}">
+	                    <a href="../ads/detail?id=${reportAds.ads.id}">
+	                        <img class="enshr_ph" src="/photo/view?filename=${reportAds.ads.photo}" alt="${reportAds.ads.name}">
 	                    </a>
                 </div>
                 </#list>
@@ -289,11 +289,11 @@
 <script src="/home/js/user_center.js"></script>
 <script src="/home/js/add.js"></script>
 <script>
-function delWanted(id){
+function delRequest(id){
 	if (!confirm('Are you sure you want to delete')) {
         return;
     }
-    ajaxRequest('delete_wanted','post',{id:id},function(){
+    ajaxRequest('delete_request','post',{id:id},function(){
 		alert('Delete successfully');
 		window.location.reload();
 	});
@@ -311,7 +311,7 @@ function delReport(id){
 // StopBidding
 function StopBiddingStopBidding(id) {
     console.log(id)
-    ajaxRequest('/bidding/stop-bidding','put',{goodsBiddingId:id},function(res){
+    ajaxRequest('/bidding/stop-bidding','put',{adsBiddingId:id},function(res){
         console.log(res)
         if (res.code == 0) {
             alert(res.data)
@@ -323,7 +323,7 @@ function StopBiddingStopBidding(id) {
     // $.ajax({
     //     type: "PUT" ,
     //     url: "/bidding/stop-bidding",
-    //     data: JSON.stringify({"goodsBiddingId": id}),
+    //     data: JSON.stringify({"adsBiddingId": id}),
     //     contentType: "application/json",
     //     dataType:'json',
     //     success: function(res) {
@@ -334,7 +334,7 @@ function StopBiddingStopBidding(id) {
 // Reset bidding
 function AuctionReset(id) {
     console.log(id)
-    ajaxRequest('/bidding/reset-bidding','post',{goodsId:id},function(res){
+    ajaxRequest('/bidding/reset-bidding','post',{adsId:id},function(res){
         console.log(res)
         if (res.code == 0) {
             alert(res.data)
@@ -346,10 +346,10 @@ function AuctionReset(id) {
 
 $(document).ready(function(){
 	ajaxRequest('get_stats','post',{},function(rst){
-		$("#goodsTotal").text(rst.data.goodsTotal);
-		$("#soldGoodsTotal").text(rst.data.soldGoodsTotal);
-		$("#downGoodsTotal").text(rst.data.downGoodsTotal);
-		$("#upGoodsTotal").text(rst.data.upGoodsTotal);
+		$("#adsTotal").text(rst.data.adsTotal);
+		$("#soldAdsTotal").text(rst.data.soldAdsTotal);
+		$("#downAdsTotal").text(rst.data.downAdsTotal);
+		$("#upAdsTotal").text(rst.data.upAdsTotal);
 	});
 	$("#edit_pwd_info").bind('click',function(){
         $(this).css({

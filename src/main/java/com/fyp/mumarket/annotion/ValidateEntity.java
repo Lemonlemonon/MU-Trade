@@ -6,8 +6,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Entity validation custom annotation class. 
- * It checks whether the values of each field of the entity are within the limits specified by our custom annotations.
+ * Entity validation annotation class. 
+ * It checks whether the values of each field of the entity are within the limits specified by custom annotations.
  * @author Administrator
  *
  */

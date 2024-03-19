@@ -1,6 +1,6 @@
 package com.fyp.mumarket.dao.common;
 
-import com.fyp.mumarket.entity.common.GoodsBidding;
+import com.fyp.mumarket.entity.common.AdsBidding;
 import com.fyp.mumarket.entity.common.Notice;
 import java.util.Iterator;
 import java.util.List;

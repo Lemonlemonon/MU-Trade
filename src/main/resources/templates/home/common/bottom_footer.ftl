@@ -3,10 +3,10 @@
         <div class="friend-links">
         <div class="links-title center">Related site</div>
         <ul class="links-wr center" style="margin-top: 22px;">
-            <#if friendLinkList??>
-            <#list friendLinkList as friendLink>
+            <#if relatedSiteList??>
+            <#list relatedSiteList as relatedSite>
             <li class="first">
-                <a href="${friendLink.url}" target="_blank" class="links">${friendLink.name}</a>
+                <a href="${relatedSite.url}" target="_blank" class="links">${relatedSite.name}</a>
             </li>
             </#list>
             </#if>

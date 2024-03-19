@@ -53,7 +53,7 @@ public class StudentController {
 	public Result<Boolean> upDown(@RequestParam(name="id",required=true)Long id ,@RequestParam(name="status",required=true)Integer status){
 		Student student = studentService.findById(id);
 		if(student == null){
-			return Result.error(CodeMsg.ADMIN_GOODS_NO_EXIST);
+			return Result.error(CodeMsg.ADMIN_ADS_NO_EXIST);
 		}
 		if(student.getStatus() == status){
 			return Result.error(CodeMsg.ADMIN_STUDENT_STATUS_NO_CHANGE);
