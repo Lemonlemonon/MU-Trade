@@ -4,11 +4,12 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fyp.mumarket.bean.CodeMsg;
-import com.fyp.mumarket.bean.Result;
-import com.fyp.mumarket.controller.admin.StudentController;
-import com.fyp.mumarket.controller.user.UserNoticeController;
-import com.fyp.mumarket.entity.common.MsgVo;
+import com.fyp.mutrade.bean.CodeMsg;
+import com.fyp.mutrade.bean.Result;
+import com.fyp.mutrade.controller.admin.StudentController;
+import com.fyp.mutrade.controller.user.UserNoticeController;
+import com.fyp.mutrade.entity.common.MsgVo;
+
 import java.nio.charset.Charset;
 import javax.annotation.Resource;
 import org.approvaltests.Approvals;

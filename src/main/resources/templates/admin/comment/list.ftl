@@ -73,7 +73,7 @@ td{
                         </th>
                         <th>Image</th>
                         <th>Ads name</th>
-                        <th>评论者(学号)</th>
+                        <th>From(Student ID)</th>
                         <th style="width:256px;">Content</th>
                         <th style="width:200px;">Reply to</th>
                         <th>Time</th>

@@ -8,14 +8,6 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
-import com.fyp.mumarket.dao.admin.MenuDao;
-import com.fyp.mumarket.dao.admin.UserDao;
-import com.fyp.mumarket.entity.admin.Menu;
-import com.fyp.mumarket.entity.admin.OperaterLog;
-import com.fyp.mumarket.entity.admin.User;
-import com.fyp.mumarket.service.admin.MenuService;
-import com.fyp.mumarket.service.admin.OperaterLogService;
-import com.fyp.mumarket.service.admin.UserService;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,6 +17,15 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.util.ReflectionTestUtils;
+
+import com.fyp.mutrade.dao.admin.MenuDao;
+import com.fyp.mutrade.dao.admin.UserDao;
+import com.fyp.mutrade.entity.admin.Menu;
+import com.fyp.mutrade.entity.admin.OperaterLog;
+import com.fyp.mutrade.entity.admin.User;
+import com.fyp.mutrade.service.admin.MenuService;
+import com.fyp.mutrade.service.admin.OperaterLogService;
+import com.fyp.mutrade.service.admin.UserService;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
