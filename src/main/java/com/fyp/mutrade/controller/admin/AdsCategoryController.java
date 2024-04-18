@@ -111,12 +111,14 @@ public class AdsCategoryController {
 		if(validate.getCode() != CodeMsg.SUCCESS.getCode()){
 			return Result.error(validate);
 		}
+		//Make sure the current category has a valid parent category
 		if(adsCategory.getParent() != null && adsCategory.getParent().getId() == null){
 			adsCategory.setParent(null);
 		}
 		if(adsCategory.getId() == null){
 			return Result.error(CodeMsg.DATA_ERROR);
 		}
+		//Check if it exist such category in the database
 		AdsCategory existAdsCategory = adsCategoryService.findById(adsCategory.getId());
 		if(existAdsCategory == null){
 			return Result.error(CodeMsg.DATA_ERROR);

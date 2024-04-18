@@ -46,8 +46,8 @@ public class CodeMsg {
 	//Success code
 	public static CodeMsg SUCCESS = new CodeMsg(0, "success");
 	//Illegal data error code
-	public static CodeMsg DATA_ERROR = new CodeMsg(-1, "Illegal value！");
-	public static CodeMsg CPACHA_EMPTY = new CodeMsg(-2, "varification code can't be null!！");
+	public static CodeMsg DATA_ERROR = new CodeMsg(-1, "Illegal value!");
+	public static CodeMsg CPACHA_EMPTY = new CodeMsg(-2, "varification code can't be null!");
 	public static CodeMsg VALIDATE_ENTITY_ERROR = new CodeMsg(-3, "");
 	public static CodeMsg SESSION_EXPIRED = new CodeMsg(-4, "Session has expired, please refresh the page and try again!");
 	public static CodeMsg CPACHA_ERROR = new CodeMsg(-5, "invaild code");

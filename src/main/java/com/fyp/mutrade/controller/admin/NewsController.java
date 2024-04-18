@@ -24,7 +24,7 @@ public class NewsController {
 	private NewsService newsService;
 	@Autowired
 	private OperaterLogService operaterLogService;
-	//News list page
+	//News list request
 	@RequestMapping(value="/list")
 	public String list(Model model,News news,PageBean<News> pageBean){
 		model.addAttribute("title", "New&Announcement");
@@ -33,7 +33,7 @@ public class NewsController {
 		return "admin/news/list";
 	}
 	
-	//Add news page
+	//Add news request
 	@RequestMapping(value="/add",method=RequestMethod.GET)
 	public String add(Model model){
 		return "admin/news/add";
@@ -48,14 +48,14 @@ public class NewsController {
 		if(validate.getCode() != CodeMsg.SUCCESS.getCode()){
 			return Result.error(validate);
 		}
-		//Data legal
+		//If data is empty
 		if(newsService.save(news) == null){
 			return Result.error(CodeMsg.ADMIN_NEWS_ADD_ERROR);
 		}
 		operaterLogService.add("Added News: " + news);
 		return Result.success(true);
 	}
-	//New edit page
+	//New edit request
 	@RequestMapping(value="/edit",method=RequestMethod.GET)
 	public String edit(Model model,@RequestParam(name="id",required=true)Long id){
 		model.addAttribute("news", newsService.find(id));
@@ -65,7 +65,7 @@ public class NewsController {
 	@RequestMapping(value="/edit",method=RequestMethod.POST)
 	@ResponseBody
 	public Result<Boolean> edit(News news){
-		//validate data using global method
+		//validate edited data object using global method
 		CodeMsg validate = ValidateEntityUtil.validate(news);
 		if(validate.getCode() != CodeMsg.SUCCESS.getCode()){
 			return Result.error(validate);

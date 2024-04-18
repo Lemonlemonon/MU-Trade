@@ -11,7 +11,7 @@
  Target Server Version : 80032 (8.0.32)
  File Encoding         : 65001
 
- Date: 20/03/2024 00:15:59
+ Date: 19/04/2024 00:10:49
 */
 
 SET NAMES utf8mb4;
@@ -42,20 +42,24 @@ CREATE TABLE `fyp_ads`  (
   INDEX `FKl3545va3h3hk6ju68qled17cw`(`student_id` ASC) USING BTREE,
   CONSTRAINT `fyp_ads_ibfk_1` FOREIGN KEY (`ads_category_id`) REFERENCES `fyp_ads_category` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fyp_ads_ibfk_2` FOREIGN KEY (`student_id`) REFERENCES `fyp_student` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 31 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of fyp_ads
 -- ----------------------------
-INSERT INTO `fyp_ads` VALUES (4, '2023-11-20 15:05:32', '2023-12-19 03:30:43', 12888, '4', 0, 'Asus laptop', '20231109/1586610285979.jpg', 0, 3000, 3, 91, 9, 1, NULL);
-INSERT INTO `fyp_ads` VALUES (5, '2024-02-22 23:30:37', '2024-03-18 09:41:00', 23, 'Asus laptop, used only few times', 0, 'I5 3600G Asus laptop', '20231109/1586610285979.jpg', 0, 500, 1, 94, 9, 1, NULL);
-INSERT INTO `fyp_ads` VALUES (6, '2024-03-04 21:08:14', '2024-03-15 03:00:49', 250, 'alexia &google assistant\r\n43UQ75006LF or 43 up 7500 plf available WITH STAND, warranty 6 months ,genuine\r\nBRAND NEW remote controller included', 1, '43 alexia 4K Smart TV', '20240304/1709557643853.jpg', 1, 250, 3, 12, 24, 2, NULL);
-INSERT INTO `fyp_ads` VALUES (7, '2024-03-04 21:09:51', '2024-03-18 09:41:06', 140, 'Condition: New\r\n**Brand New Samsung Pro Buds 2\r\n**Fully Sealed\r\n**No offers below asking', 1, 'Samsung Pro Buds 2', '20240304/1709557763829.jpg', 0, 140, 1, 6, 16, 2, NULL);
-INSERT INTO `fyp_ads` VALUES (8, '2024-03-04 21:12:00', '2024-03-18 09:37:47', 480, 'Airpods Max - Sky Blue', 0, 'Airpods Max - Sky Blue', '20240304/1709557918742.jpg', 0, 480, 1, 53, 16, 3, NULL);
-INSERT INTO `fyp_ads` VALUES (9, '2024-03-12 23:47:07', '2024-03-12 23:53:05', 100, 'Pure Electric Scooter\r\n\r\nCharger Included\r\n\r\nRange is 25 km\r\nTop speed is 25 km', 0, 'Pure Air Electric Scooter', '20240312/1710258400160.jpg', 0, 80, 3, 4, 48, 2, 5);
-INSERT INTO `fyp_ads` VALUES (10, '2024-03-12 23:53:35', '2024-03-16 01:26:59', 111, '111111111111111111', 0, '111', '20240312/1710258805997.jpg', 0, 11, 1, 7, 55, 2, 7);
-INSERT INTO `fyp_ads` VALUES (11, '2024-03-12 23:56:31', '2024-03-16 01:01:35', 111, '1111111111111111111111111111111111111111111', 0, '111', '20240312/1710258979915.jpg', 0, 111, 1, 7, 10, 2, 10);
-INSERT INTO `fyp_ads` VALUES (12, '2024-03-15 03:49:46', '2024-03-20 01:07:17', 111, '11111111111111111111111111111111', 0, '11111111', '20240314/1710445779334.jpg', 0, 111, 1, 27, 43, 2, 11);
+INSERT INTO `fyp_ads` VALUES (17, '2024-03-28 01:49:23', '2024-03-28 03:01:43', 500, 'Nintendo Switch Oled plus 2 games ( Mario Cart + Golf ) and a steering wheel for Mario cart . In perfect condition, comes with box , all leads and connections , case for OLED . Just over a year old . First to see will buy . Confident of that .', 0, 'Nintendo Oled for sale', 'img/1.jpg', 0, 300, 1, 5, 18, 15, 16);
+INSERT INTO `fyp_ads` VALUES (18, '2024-03-28 01:55:25', '2024-03-28 01:55:25', 500, 'PlayStation pro\nController and cables inc.\nPristine condition\n\nSystem Software 11.02', 0, 'PlayStation 4', 'img/2.jpg', 0, 150, 1, 0, 18, 16, 17);
+INSERT INTO `fyp_ads` VALUES (20, '2024-03-28 02:04:33', '2024-03-28 02:04:33', 170, 'HP Elitebook 850 G5\nCore i5 8350U - 8th Generation\n16gb DDR4 ram\n256GB NVMe- Huge and fast\nExcellent battery\n15.6\" FHD', 0, 'HP Elitebook 850', 'img/3.jpg', 0, 100, 1, 0, 9, 16, 19);
+INSERT INTO `fyp_ads` VALUES (21, '2024-03-28 02:06:28', '2024-03-28 02:07:24', 2000, ' am selling my MacBook Pro 16” laptop that I have recently purchased from CEX in Dublin. Unfortunately, I have realised that for me this machine is an overkill hence my reason for selling.\n\nIt runs beautifully, no lags or freezes whatsoever and it is in immaculate condition with excellent battery (only 25 cycle counts).\n\nSpecs:\n\nCPU: Apple M1 Pro chip\nRam: 16GB\nStorage: 1TB\nBattery: 100% with only 25 cycle counts\n', 0, 'Space Grey Macbook Pro 16', 'img/4.jpg', 0, 1600, 1, 1, 9, 16, 20);
+INSERT INTO `fyp_ads` VALUES (22, '2024-03-28 02:11:57', '2024-03-28 02:13:02', 3000, 'Selling my beloved Suzuki Bandit 600 due to a newborn arrival and I\'m not allowed strap a car seat to the back it so need to invest in a car.\n\nFull service history for the bike included.\n\nThere are a few dinks and marks but overall good condition. Have never had an issue with it, starts every time and an absolute joy to ride.', 0, 'Suzuki Bandit 600', 'img/5.jpg', 0, 1900, 1, 5, 47, 16, 21);
+INSERT INTO `fyp_ads` VALUES (23, '2024-03-28 02:22:40', '2024-03-28 03:05:28', 100, 'Logitech G Pro Keyboard, fully functional with short actuated mechanical keys. Works perfectly with no issues. Comes with cable but no box. Pick up only', 0, 'Logitech G Pro Keyboard', 'img/6.jpg', 0, 75, 3, 4, 19, 16, 32);
+INSERT INTO `fyp_ads` VALUES (24, '2024-03-28 02:28:50', '2024-03-28 02:28:50', 500, 'Apple iPhone 13 128GB in Colour Midnight comes with original packaging\nExcellent condition, used for less than one year.\nBattery health intact\nLocked to 3 network', 0, 'Iphone 13', 'img/7.jpg', 0, 350, 1, 0, 4, 16, 25);
+INSERT INTO `fyp_ads` VALUES (25, '2024-03-28 02:30:11', '2024-03-28 02:30:11', 100, 'Nokia 800 Tough 4G LTE GPS WIFI 2.0MP Camera Unlocked Mobile Phone.\n\nVery little use.', 0, 'Nokia 800 Tough 4G LTE', 'img/8.jpg', 0, 80, 1, 0, 4, 16, 26);
+INSERT INTO `fyp_ads` VALUES (26, '2024-03-28 02:33:34', '2024-03-28 02:33:34', 600, 'Everything you want for great pictures. In perfect condition. Used very little', 0, 'Nikon Digital Camera. D3000', 'img/9.jpg', 0, 350, 1, 0, 23, 16, 27);
+INSERT INTO `fyp_ads` VALUES (27, '2024-03-28 02:36:37', '2024-03-28 02:36:47', 90, 'Fast Charging\n\nWireless Charging\n\nCharging Indicator\n\nAutomatic Off', 0, 'Wireless Charger, 3 in 1', 'img/10.jpg', 0, 60, 1, 1, 5, 16, 28);
+INSERT INTO `fyp_ads` VALUES (28, '2024-03-28 02:42:31', '2024-03-28 02:42:31', 600, 'PS5 digital edition, 2 controllers and Pulse 3D headset. Very good condition, hardly used over the past year. One of the controllers is like new, the other has a little bit of stick shift but still in good condition.', 0, 'PS5 + 2x Controller', 'img/11.jpg', 0, 450, 1, 0, 18, 16, 29);
+INSERT INTO `fyp_ads` VALUES (29, '2024-03-28 02:44:41', '2024-03-28 02:44:41', 160, 'Wireless platinum headset for PlayStation, as new', 0, 'PlayStation wireless headset', 'img/12.jpg', 0, 130, 1, 0, 16, 16, 30);
+INSERT INTO `fyp_ads` VALUES (30, '2024-03-28 02:52:14', '2024-03-29 01:30:54', 100, 'No issues at all; perfect condition.\n- Comes with everything included in the box.\n- New mouse feet just recently put on it.\n\n\nUsed for gaming for about a year but swapped to G Pro X Super light.\n\nCan take swaps if you have a mouse I am interested in.', 0, 'Logitech G Pro Gaming Mouse', 'img/13.jpg', 0, 60, 1, 16, 20, 16, 31);
 
 -- ----------------------------
 -- Table structure for fyp_ads_bidding
@@ -68,19 +72,30 @@ CREATE TABLE `fyp_ads_bidding`  (
   `create_time` datetime NULL DEFAULT NULL,
   `update_time` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 33 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of fyp_ads_bidding
 -- ----------------------------
-INSERT INTO `fyp_ads_bidding` VALUES (4, NULL, 2, '2024-03-12 23:47:07', '2024-03-12 23:53:07');
-INSERT INTO `fyp_ads_bidding` VALUES (5, 9, 0, '2024-03-12 23:53:05', '2024-03-12 23:53:05');
-INSERT INTO `fyp_ads_bidding` VALUES (6, NULL, 2, '2024-03-12 23:53:35', '2024-03-12 23:54:07');
-INSERT INTO `fyp_ads_bidding` VALUES (7, 10, 2, '2024-03-12 23:54:48', '2024-03-12 23:55:18');
-INSERT INTO `fyp_ads_bidding` VALUES (8, NULL, 2, '2024-03-12 23:56:31', '2024-03-12 23:57:41');
-INSERT INTO `fyp_ads_bidding` VALUES (9, 11, 1, '2024-03-12 23:59:32', '2024-03-13 02:36:25');
-INSERT INTO `fyp_ads_bidding` VALUES (10, 11, 2, '2024-03-13 02:36:25', '2024-03-13 02:37:20');
-INSERT INTO `fyp_ads_bidding` VALUES (11, 12, 2, '2024-03-15 03:49:46', '2024-03-15 03:51:08');
+INSERT INTO `fyp_ads_bidding` VALUES (14, 15, 0, '2024-03-28 01:31:39', '2024-03-28 01:31:39');
+INSERT INTO `fyp_ads_bidding` VALUES (15, 16, 0, '2024-03-28 01:42:09', '2024-03-28 01:42:09');
+INSERT INTO `fyp_ads_bidding` VALUES (16, 17, 0, '2024-03-28 01:49:23', '2024-03-28 01:49:23');
+INSERT INTO `fyp_ads_bidding` VALUES (17, 18, 0, '2024-03-28 01:55:25', '2024-03-28 01:55:25');
+INSERT INTO `fyp_ads_bidding` VALUES (18, 19, 0, '2024-03-28 01:57:37', '2024-03-28 01:57:37');
+INSERT INTO `fyp_ads_bidding` VALUES (19, 20, 0, '2024-03-28 02:04:33', '2024-03-28 02:04:33');
+INSERT INTO `fyp_ads_bidding` VALUES (20, 21, 0, '2024-03-28 02:06:28', '2024-03-28 02:06:28');
+INSERT INTO `fyp_ads_bidding` VALUES (21, 22, 0, '2024-03-28 02:11:57', '2024-03-28 02:11:57');
+INSERT INTO `fyp_ads_bidding` VALUES (22, NULL, 0, '2024-03-28 02:20:29', '2024-03-28 02:20:29');
+INSERT INTO `fyp_ads_bidding` VALUES (23, NULL, 0, '2024-03-28 02:22:12', '2024-03-28 02:22:12');
+INSERT INTO `fyp_ads_bidding` VALUES (24, 23, 1, '2024-03-28 02:22:40', '2024-03-28 03:04:53');
+INSERT INTO `fyp_ads_bidding` VALUES (25, 24, 0, '2024-03-28 02:28:50', '2024-03-28 02:28:50');
+INSERT INTO `fyp_ads_bidding` VALUES (26, 25, 0, '2024-03-28 02:30:11', '2024-03-28 02:30:11');
+INSERT INTO `fyp_ads_bidding` VALUES (27, 26, 0, '2024-03-28 02:33:34', '2024-03-28 02:33:34');
+INSERT INTO `fyp_ads_bidding` VALUES (28, 27, 0, '2024-03-28 02:36:37', '2024-03-28 02:36:37');
+INSERT INTO `fyp_ads_bidding` VALUES (29, 28, 0, '2024-03-28 02:42:31', '2024-03-28 02:42:31');
+INSERT INTO `fyp_ads_bidding` VALUES (30, 29, 0, '2024-03-28 02:44:41', '2024-03-28 02:44:41');
+INSERT INTO `fyp_ads_bidding` VALUES (31, 30, 0, '2024-03-28 02:52:14', '2024-03-28 02:52:14');
+INSERT INTO `fyp_ads_bidding` VALUES (32, 23, 2, '2024-03-28 03:04:53', '2024-03-28 03:05:36');
 
 -- ----------------------------
 -- Table structure for fyp_ads_category
@@ -208,15 +223,12 @@ CREATE TABLE `fyp_comment`  (
   INDEX `FK6hfa6lislban9lqrv34ptifln`(`student_id` ASC) USING BTREE,
   CONSTRAINT `fyp_comment_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `fyp_student` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fyp_comment_ibfk_2` FOREIGN KEY (`ads_id`) REFERENCES `fyp_ads` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of fyp_comment
 -- ----------------------------
-INSERT INTO `fyp_comment` VALUES (1, '2024-03-06 01:57:43', '2024-03-06 01:57:43', 'When did you buy this?', NULL, 8, 2);
-INSERT INTO `fyp_comment` VALUES (2, '2024-03-06 01:58:10', '2024-03-06 01:58:10', 'Replys: \"When did you buy this?\"<br>2 months ago', 'Zhuu', 8, 3);
-INSERT INTO `fyp_comment` VALUES (4, '2024-03-06 02:18:03', '2024-03-06 02:18:03', 'Replys: “When did you buy this?”<br> today', 'Zhuu', 8, 3);
-INSERT INTO `fyp_comment` VALUES (5, '2024-03-06 02:18:14', '2024-03-06 02:18:14', 'Replys: “When did you buy this?”<br>today', 'Zhuu', 8, 3);
+INSERT INTO `fyp_comment` VALUES (6, '2024-03-28 21:38:35', '2024-03-28 21:38:35', 'When did you buy this?', NULL, 30, 15);
 
 -- ----------------------------
 -- Table structure for fyp_db_backup
@@ -229,7 +241,7 @@ CREATE TABLE `fyp_db_backup`  (
   `filename` varchar(200) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `filepath` varchar(128) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 27 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 28 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of fyp_db_backup
@@ -239,6 +251,7 @@ INSERT INTO `fyp_db_backup` VALUES (23, '2024-03-01 09:00:00', '2024-03-01 09:00
 INSERT INTO `fyp_db_backup` VALUES (24, '2024-03-01 23:17:27', '2024-03-01 23:17:27', 'db_campus_market_20240301151727.sql', 'D:\\dev\\FYP\\mumarket\\Mu-Market\\src\\main\\resources\\backup/');
 INSERT INTO `fyp_db_backup` VALUES (25, '2024-03-14 17:04:38', '2024-03-14 17:04:38', 'db_mu_trade_20240314090437.sql', 'D:\\dev\\FYP\\mumarket\\Mu-Market\\src\\main\\resources\\backup/');
 INSERT INTO `fyp_db_backup` VALUES (26, '2024-03-19 00:58:31', '2024-03-19 00:58:31', 'db_mu_trade_20240318165831.sql', 'D:\\dev\\FYP\\mumarket\\Mu-Market\\src\\main\\resources\\backup/');
+INSERT INTO `fyp_db_backup` VALUES (27, '2024-04-16 08:00:00', '2024-04-16 08:00:00', 'db_mu_trade_20240416010000.sql', 'D:\\dev\\FYP\\mumarket\\Mu-Trade\\src\\main\\resources\\backup/');
 
 -- ----------------------------
 -- Table structure for fyp_menu
@@ -355,14 +368,13 @@ CREATE TABLE `fyp_notice`  (
   `is_read` int NULL DEFAULT NULL COMMENT '已读状态：0-未读，1-已读',
   `send_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of fyp_notice
 -- ----------------------------
-INSERT INTO `fyp_notice` VALUES (6, 3, 'Hello', '2024-03-13 02:36:05', '2024-03-16 01:26:15', 0, '2');
-INSERT INTO `fyp_notice` VALUES (7, 3, 'You\'ve won the biding for the Ads: 111', '2024-03-13 02:37:20', '2024-03-13 02:37:29', 1, 'System');
-INSERT INTO `fyp_notice` VALUES (8, 3, 'You\'ve won the biding for the Ads: 11111111', '2024-03-15 03:51:08', '2024-03-15 03:52:10', 1, 'System');
+INSERT INTO `fyp_notice` VALUES (9, 15, 'You\'ve won the biding for the Ads: Logitech G Pro Keyboard', '2024-03-28 03:05:36', '2024-03-29 01:32:33', 1, 'System');
+INSERT INTO `fyp_notice` VALUES (10, 15, 'Hello! When would you be available for trade?', '2024-03-28 03:07:09', '2024-03-28 07:37:10', 1, '16');
 
 -- ----------------------------
 -- Table structure for fyp_operater_log
@@ -375,7 +387,7 @@ CREATE TABLE `fyp_operater_log`  (
   `content` varchar(1024) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `operator` varchar(18) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 624 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = COMPACT;
+) ENGINE = InnoDB AUTO_INCREMENT = 641 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = COMPACT;
 
 -- ----------------------------
 -- Records of fyp_operater_log
@@ -482,6 +494,23 @@ INSERT INTO `fyp_operater_log` VALUES (620, '2024-03-20 00:38:01', '2024-03-20 0
 INSERT INTO `fyp_operater_log` VALUES (621, '2024-03-20 00:52:18', '2024-03-20 00:52:18', 'User [admin] at  [2024-03-19 16:52:18] Logined in to the system!', 'admin');
 INSERT INTO `fyp_operater_log` VALUES (622, '2024-03-20 00:55:33', '2024-03-20 00:55:33', 'User [admin] at  [2024-03-19 16:55:33] Logined in to the system!', 'admin');
 INSERT INTO `fyp_operater_log` VALUES (623, '2024-03-20 06:09:05', '2024-03-20 06:09:05', 'User [admin] at  [2024-03-19 22:09:04] Logined in to the system!', 'admin');
+INSERT INTO `fyp_operater_log` VALUES (624, '2024-03-24 22:17:44', '2024-03-24 22:17:44', 'User [admin] at  [2024-03-24 14:17:43] Logined in to the system!', 'admin');
+INSERT INTO `fyp_operater_log` VALUES (625, '2024-03-28 00:54:31', '2024-03-28 00:54:31', 'User [admin] at  [2024-03-27 16:54:31] Logined in to the system!', 'admin');
+INSERT INTO `fyp_operater_log` VALUES (626, '2024-03-28 01:43:39', '2024-03-28 01:43:39', 'User [admin] at  [2024-03-27 17:43:38] Logined in to the system!', 'admin');
+INSERT INTO `fyp_operater_log` VALUES (627, '2024-03-28 01:49:05', '2024-03-28 01:49:05', 'User [admin] at  [2024-03-27 17:49:04] Logined in to the system!', 'admin');
+INSERT INTO `fyp_operater_log` VALUES (628, '2024-03-28 01:50:13', '2024-03-28 01:50:13', 'User [admin] at  [2024-03-27 17:50:13] Logined in to the system!', 'admin');
+INSERT INTO `fyp_operater_log` VALUES (629, '2024-03-28 01:58:59', '2024-03-28 01:58:59', 'User [admin] at  [2024-03-27 17:58:58] Logined in to the system!', 'admin');
+INSERT INTO `fyp_operater_log` VALUES (630, '2024-03-28 02:55:21', '2024-03-28 02:55:21', 'User [admin] at  [2024-03-27 18:55:20] Logined in to the system!', 'admin');
+INSERT INTO `fyp_operater_log` VALUES (631, '2024-03-28 04:12:39', '2024-03-28 04:12:39', 'User [admin] at  [2024-03-27 20:12:39] Logined in to the system!', 'admin');
+INSERT INTO `fyp_operater_log` VALUES (632, '2024-03-28 04:13:59', '2024-03-28 04:13:59', 'Edited site settingSiteSetting [siteName=MU-Market, siteUrl=MUMarket.com, qrcode=20240327/1711570435659.png, allRights=MU-Market, logo1=20240301/1709255293816.png, logo2=20240327/1711570427601.png]', 'admin');
+INSERT INTO `fyp_operater_log` VALUES (633, '2024-03-28 07:06:48', '2024-03-28 07:06:48', 'User [admin] at  [2024-03-27 23:06:48] Logined in to the system!', 'admin');
+INSERT INTO `fyp_operater_log` VALUES (634, '2024-03-28 21:31:13', '2024-03-28 21:31:13', 'User [admin] at  [2024-03-28 13:31:12] Logined in to the system!', 'admin');
+INSERT INTO `fyp_operater_log` VALUES (635, '2024-03-28 23:03:21', '2024-03-28 23:03:21', 'User [admin] at  [2024-03-28 15:03:20] Logined in to the system!', 'admin');
+INSERT INTO `fyp_operater_log` VALUES (636, '2024-03-29 00:10:43', '2024-03-29 00:10:43', 'User [admin] at  [2024-03-28 16:10:42] Logined in to the system!', 'admin');
+INSERT INTO `fyp_operater_log` VALUES (637, '2024-03-29 01:32:55', '2024-03-29 01:32:55', 'User [admin] at  [2024-03-28 17:32:54] Logined in to the system!', 'admin');
+INSERT INTO `fyp_operater_log` VALUES (638, '2024-04-16 03:37:55', '2024-04-16 03:37:55', 'User [admin] at  [2024-04-15 20:37:54] Logined in to the system!', 'admin');
+INSERT INTO `fyp_operater_log` VALUES (639, '2024-04-16 08:56:37', '2024-04-16 08:56:37', 'User [admin] at  [2024-04-16 01:56:36] Logined in to the system!', 'admin');
+INSERT INTO `fyp_operater_log` VALUES (640, '2024-04-19 04:09:05', '2024-04-19 04:09:05', 'User [admin] at  [2024-04-18 21:09:05] Logined in to the system!', 'admin');
 
 -- ----------------------------
 -- Table structure for fyp_related_site
@@ -519,12 +548,12 @@ CREATE TABLE `fyp_report_ads`  (
   INDEX `FKsvhhes59oocag8r9khs753lp4`(`student_id` ASC) USING BTREE,
   CONSTRAINT `fyp_report_ads_ibfk_1` FOREIGN KEY (`ads_id`) REFERENCES `fyp_ads` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fyp_report_ads_ibfk_2` FOREIGN KEY (`student_id`) REFERENCES `fyp_student` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of fyp_report_ads
 -- ----------------------------
-INSERT INTO `fyp_report_ads` VALUES (2, '2024-03-06 21:36:47', '2024-03-06 21:36:47', 'bad', 8, 2);
+INSERT INTO `fyp_report_ads` VALUES (3, '2024-03-28 21:38:57', '2024-03-28 21:38:57', 'This is a scam!', 30, 15);
 
 -- ----------------------------
 -- Table structure for fyp_request_ads
@@ -543,12 +572,14 @@ CREATE TABLE `fyp_request_ads`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `FKl7jrltb5cvwvfk46lstodq4sb`(`student_id` ASC) USING BTREE,
   CONSTRAINT `fyp_request_ads_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `fyp_student` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of fyp_request_ads
 -- ----------------------------
-INSERT INTO `fyp_request_ads` VALUES (1, '2024-03-04 20:26:09', '2024-03-04 20:26:09', 'I want a gaming keyboard with RGB and in ad condiction', 'RGB Gaming key board', 50, 'South Campus', 0, 2);
+INSERT INTO `fyp_request_ads` VALUES (2, '2024-03-29 00:20:40', '2024-03-29 00:20:40', 'Fine Condition\r\n• Console and controller\r\n• €150', 'Xbox One S', 150, 'South Campus', 0, 15);
+INSERT INTO `fyp_request_ads` VALUES (3, '2024-03-29 00:22:08', '2024-03-29 00:22:08', 'Samsung S22 Ultra\r\nExcellent condition', 'Samsung S22 Ultra', 400, 'South Campus', 0, 16);
+INSERT INTO `fyp_request_ads` VALUES (4, '2024-03-29 00:23:31', '2024-03-29 00:23:31', 'Looking for an Acoustic guitar', 'Acoustic guitar', 232, 'South Campus', 0, 16);
 
 -- ----------------------------
 -- Table structure for fyp_role
@@ -675,7 +706,7 @@ CREATE TABLE `fyp_site_setting`  (
 -- ----------------------------
 -- Records of fyp_site_setting
 -- ----------------------------
-INSERT INTO `fyp_site_setting` VALUES (1, '2023-11-06 17:02:17', '2024-03-01 09:08:16', 'MU-Market', '20240301/1709255293816.png', '20240301/1709255128377.png', '20240220/1708460761925.png', 'MU-Market', 'MUMarket.com');
+INSERT INTO `fyp_site_setting` VALUES (1, '2023-11-06 17:02:17', '2024-03-28 04:13:59', 'MU-Market', '20240301/1709255293816.png', '20240327/1711570427601.png', '20240327/1711570435659.png', 'MU-Market', 'MUMarket.com');
 
 -- ----------------------------
 -- Table structure for fyp_student
@@ -697,14 +728,14 @@ CREATE TABLE `fyp_student`  (
   `qq` varchar(18) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `UK_e63ucar64v05lc4uni6hagqci`(`sn` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 18 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of fyp_student
 -- ----------------------------
-INSERT INTO `fyp_student` VALUES (1, '2023-11-20 22:05:29', '2023-11-21 07:51:38', 'Maynooth University', 'Year 4', '20231109/1699569178075.png', '123456', 'Zhu', '123456', 'CSSE', '20322243', 1, NULL);
-INSERT INTO `fyp_student` VALUES (2, '2024-02-23 07:45:09', '2024-03-06 01:30:34', 'Maynoothh', '44', '20240305/1709659833550.jpg', '08332023022', 'Zhuu', '88888888', 'CSSEE', '20322253', 1, NULL);
-INSERT INTO `fyp_student` VALUES (3, '2024-03-04 21:10:55', '2024-03-04 21:50:11', 'Maynooth', '4', NULL, '0833202302', 'Huang', '88888888', 'CSSE', '20322254', 1, NULL);
+INSERT INTO `fyp_student` VALUES (15, '2024-03-28 01:48:30', '2024-03-29 00:21:05', 'Maynooth', ' 4', '20240327/1711565912328.png', '0833202302', 'Zhu', '88888888', ' CSSE', '20322253', 1, NULL);
+INSERT INTO `fyp_student` VALUES (16, '2024-03-28 01:53:12', '2024-03-28 03:02:44', 'Maynooth', ' 4', NULL, ' 0833222334', 'Oscar', '88888888', ' ', '20322254', 1, NULL);
+INSERT INTO `fyp_student` VALUES (17, '2024-03-28 03:00:43', '2024-03-28 03:00:43', 'Maynooth', ' ', NULL, ' 0833203200', 'MU-student', '88888888', ' ', '20322255', 1, NULL);
 
 -- ----------------------------
 -- Table structure for fyp_user
@@ -747,7 +778,7 @@ CREATE TABLE `fyp_users_bidding`  (
   `update_time` datetime NOT NULL,
   `user_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of fyp_users_bidding
@@ -760,5 +791,8 @@ INSERT INTO `fyp_users_bidding` VALUES (6, 3, 8, 1111100, '2024-03-12 23:56:46',
 INSERT INTO `fyp_users_bidding` VALUES (7, 1, 8, 1112300, '2024-03-12 23:57:11', NULL, '2024-03-12 23:57:11', 'Zhu');
 INSERT INTO `fyp_users_bidding` VALUES (8, 3, 10, 111100, '2024-03-13 02:37:11', NULL, '2024-03-13 02:37:11', 'Huang');
 INSERT INTO `fyp_users_bidding` VALUES (9, 3, 11, 11100, '2024-03-15 03:50:44', NULL, '2024-03-15 03:50:44', 'Huang');
+INSERT INTO `fyp_users_bidding` VALUES (10, 15, 24, 7500, '2024-03-28 03:04:10', NULL, '2024-03-28 03:04:10', 'Zhu');
+INSERT INTO `fyp_users_bidding` VALUES (11, 15, 32, 7500, '2024-03-28 03:05:09', NULL, '2024-03-28 03:05:09', 'Zhu');
+INSERT INTO `fyp_users_bidding` VALUES (12, 15, 31, 6500, '2024-03-29 01:31:19', NULL, '2024-03-29 01:31:19', 'Zhu');
 
 SET FOREIGN_KEY_CHECKS = 1;

@@ -44,6 +44,7 @@ public class AdsController {
 	 */
 	@RequestMapping(value="/list")
 	public String list(Ads ads,PageBean<Ads> pageBean,Model model){
+		//Check if the ads exist
 		if(ads.getStudent() != null && ads.getStudent().getSn() != null){
 			Student student = studentService.findBySn(ads.getStudent().getSn());
 			if(student != null){
